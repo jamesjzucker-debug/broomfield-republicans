@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Red Wave 2026 · Broomfield County Republicans</title>
+  <meta name="description" content="Campaign graphic: a red wave sweeps across Broomfield County. Auto-loops. Screenshot or screen-record for social media." />
+  <link rel="icon" href="https://images.squarespace-cdn.com/content/v1/5ddc62c1b3ebf77e44ea17de/1576550011704-AQQDKY3D4Z7IUBPK9B49/favicon.ico" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;800;900&display=swap');
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Inter', sans-serif;
+      gap: 28px;
+      padding: 32px;
+      color: #fff;
+    }
+
+    .frame {
+      width: 100%;
+      max-width: 1080px;
+      aspect-ratio: 1;
+      background: #0A0A0A;
+      box-shadow: 0 30px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
+      display: block;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      max-width: 1080px;
+      width: 100%;
+      justify-content: center;
+    }
+    .btn {
+      background: #C22600;
+      color: #fff;
+      padding: 14px 26px;
+      font-weight: 800;
+      font-size: 0.86rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 0;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: inherit;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 6px 0 #8E1B00;
+      transition: transform .12s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .btn:hover { background: #E62F00; transform: translateY(-1px); box-shadow: 0 8px 0 #8E1B00; }
+    .btn--ghost { background: transparent; border: 2px solid #C22600; color: #C22600; box-shadow: none; }
+    .btn--ghost:hover { background: #C22600; color: #fff; }
+
+    .note {
+      max-width: 1080px;
+      width: 100%;
+      color: #9a9a9a;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      border-left: 3px solid #C22600;
+      padding: 8px 18px;
+      background: rgba(255,255,255,0.03);
+    }
+    .note strong { color: #fff; }
+    .note p { margin: 8px 0; }
+
+    /* THE WAVE ANIMATION
+       --------------------
+       The .wave-group rises from below the county clip, holds at the top
+       (county is fully red), then fades out and snaps back to the bottom
+       to loop seamlessly. */
+    .wave-group {
+      animation: rise 8s cubic-bezier(.5,.05,.4,1) infinite;
+      transform-origin: 0 0;
+    }
+    @keyframes rise {
+      0%   { transform: translateY(220px); opacity: 1; }   /* below the county */
+      35%  { transform: translateY(-220px); opacity: 1; }  /* fully covering */
+      75%  { transform: translateY(-220px); opacity: 1; }  /* hold red */
+      82%  { transform: translateY(-220px); opacity: 0; }  /* fade away */
+      83%  { transform: translateY(220px); opacity: 0; }   /* snap back */
+      100% { transform: translateY(220px); opacity: 1; }   /* visible again, ready */
+    }
+
+    /* subtle crest shimmer */
+    .crest {
+      animation: shimmer 3s ease-in-out infinite;
+      transform-origin: 0 0;
+    }
+    @keyframes shimmer {
+      0%, 100% { transform: translateX(0); }
+      50%      { transform: translateX(28px); }
+    }
+
+    /* small pulse on the star */
+    .star-pulse {
+      animation: pulse 2s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50%      { transform: scale(1.15); opacity: 1; }
+    }
+
+    /* big title accent */
+    .red-bar {
+      animation: dash 8s linear infinite;
+    }
+    @keyframes dash {
+      0%, 100% { transform: scaleX(0.4); }
+      35%      { transform: scaleX(1); }
+      75%      { transform: scaleX(1); }
+      82%      { transform: scaleX(0.4); }
+    }
+  </style>
+</head>
+<body>
+
+<svg class="frame" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated graphic showing a red wave sweeping across Broomfield County, symbolizing a Republican wave in the 2026 election.">
+
+  <!-- Background -->
+  <rect width="1080" height="1080" fill="#0A0A0A" />
+
+  <!-- Subtle radial glow behind the map -->
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="58%" r="50%">
+      <stop offset="0%" stop-color="#C22600" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#C22600" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Stylized Broomfield County silhouette (campaign graphic, not an official seal) -->
+    <clipPath id="county-clip">
+      <path d="
+        M -290 -120
+        L -240 -150
+        L -120 -160
+        L 60 -150
+        L 200 -130
+        L 280 -90
+        L 295 -10
+        L 270 80
+        L 200 140
+        L 80 165
+        L -80 170
+        L -200 150
+        L -270 110
+        L -300 30
+        L -295 -50
+        Z" />
+    </clipPath>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#glow)" />
+
+  <!-- Decorative star field (corners) -->
+  <g fill="#C22600" opacity="0.18" font-family="Arial" font-size="44" text-anchor="middle">
+    <text x="80" y="92">★</text>
+    <text x="1000" y="92">★</text>
+    <text x="80" y="1000">★</text>
+    <text x="1000" y="1000">★</text>
+    <text x="160" y="780">★</text>
+    <text x="920" y="350">★</text>
+  </g>
+
+  <!-- Top eyebrow -->
+  <text x="540" y="135" font-family="Inter" font-weight="800" font-size="22" fill="#9a9a9a" text-anchor="middle" letter-spacing="10">CITY &amp; COUNTY OF</text>
+
+  <!-- Main title -->
+  <text x="540" y="285" font-family="Bebas Neue" font-size="180" fill="#fff" text-anchor="middle" letter-spacing="3">BROOMFIELD</text>
+
+  <!-- Animated red bar accent under title -->
+  <g transform="translate(540 305)">
+    <rect class="red-bar" x="-160" y="0" width="320" height="6" fill="#C22600" />
+  </g>
+
+  <!-- The county map silhouette (centered around y = 620) -->
+  <g transform="translate(540 620)">
+
+    <!-- Drop shadow -->
+    <path d="M -290 -120 L -240 -150 L -120 -160 L 60 -150 L 200 -130 L 280 -90 L 295 -10 L 270 80 L 200 140 L 80 165 L -80 170 L -200 150 L -270 110 L -300 30 L -295 -50 Z"
+          fill="#000" opacity="0.55" transform="translate(10 14)" />
+
+    <!-- Blue base -->
+    <path d="M -290 -120 L -240 -150 L -120 -160 L 60 -150 L 200 -130 L 280 -90 L 295 -10 L 270 80 L 200 140 L 80 165 L -80 170 L -200 150 L -270 110 L -300 30 L -295 -50 Z"
+          fill="#002F61" />
+
+    <!-- Faint grid lines for "map" texture -->
+    <g clip-path="url(#county-clip)" opacity="0.12">
+      <line x1="-320" y1="-110" x2="320" y2="-110" stroke="#fff" stroke-width="1" />
+      <line x1="-320" y1="-60"  x2="320" y2="-60"  stroke="#fff" stroke-width="1" />
+      <line x1="-320" y1="-10"  x2="320" y2="-10"  stroke="#fff" stroke-width="1" />
+      <line x1="-320" y1="40"   x2="320" y2="40"   stroke="#fff" stroke-width="1" />
+      <line x1="-320" y1="90"   x2="320" y2="90"   stroke="#fff" stroke-width="1" />
+      <line x1="-320" y1="140"  x2="320" y2="140"  stroke="#fff" stroke-width="1" />
+      <line x1="-200" y1="-180" x2="-200" y2="200" stroke="#fff" stroke-width="1" />
+      <line x1="-100" y1="-180" x2="-100" y2="200" stroke="#fff" stroke-width="1" />
+      <line x1="0"    y1="-180" x2="0"    y2="200" stroke="#fff" stroke-width="1" />
+      <line x1="100"  y1="-180" x2="100"  y2="200" stroke="#fff" stroke-width="1" />
+      <line x1="200"  y1="-180" x2="200"  y2="200" stroke="#fff" stroke-width="1" />
+    </g>
+
+    <!-- "COUNTY" label inside (visible only on blue) -->
+    <text x="0" y="35" font-family="Bebas Neue" font-size="46" fill="#fff" text-anchor="middle" opacity="0.55" letter-spacing="3">COUNTY</text>
+
+    <!-- Pulsing star marker (Broomfield = the spark) -->
+    <text class="star-pulse" x="0" y="-15" font-size="68" fill="#fff" text-anchor="middle" opacity="0.85">★</text>
+
+    <!-- Animated red wave (clipped to county shape) -->
+    <g clip-path="url(#county-clip)">
+      <g class="wave-group">
+        <!-- Wave body: wide rectangle with wavy top edge -->
+        <path d="
+          M -500 0
+          Q -460 -35, -420 0
+          T -340 0
+          T -260 0
+          T -180 0
+          T -100 0
+          T -20 0
+          T 60 0
+          T 140 0
+          T 220 0
+          T 300 0
+          T 380 0
+          T 460 0
+          T 540 0
+          L 540 400
+          L -500 400
+          Z" fill="#C22600" />
+
+        <!-- Crest highlight -->
+        <path class="crest" d="
+          M -500 0
+          Q -460 -35, -420 0
+          T -340 0
+          T -260 0
+          T -180 0
+          T -100 0
+          T -20 0
+          T 60 0
+          T 140 0
+          T 220 0
+          T 300 0
+          T 380 0
+          T 460 0
+          T 540 0" fill="none" stroke="#FF4116" stroke-width="5" stroke-linecap="round" />
+      </g>
+    </g>
+
+    <!-- White outline on top (always visible) -->
+    <path d="M -290 -120 L -240 -150 L -120 -160 L 60 -150 L 200 -130 L 280 -90 L 295 -10 L 270 80 L 200 140 L 80 165 L -80 170 L -200 150 L -270 110 L -300 30 L -295 -50 Z"
+          fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round" />
+  </g>
+
+  <!-- Bottom tagline -->
+  <text x="540" y="900" font-family="Bebas Neue" font-size="120" fill="#E62F00" text-anchor="middle" letter-spacing="5">RED WAVE 2026</text>
+  <text x="540" y="958" font-family="Inter" font-weight="800" font-size="22" fill="#9a9a9a" text-anchor="middle" letter-spacing="8">TAKE BROOMFIELD BACK</text>
+
+  <!-- Bottom flag stripe -->
+  <rect x="0"   y="1052" width="360" height="28" fill="#C22600" />
+  <rect x="360" y="1052" width="360" height="28" fill="#fff" />
+  <rect x="720" y="1052" width="360" height="28" fill="#002F61" />
+
+</svg>
+
+<div class="toolbar">
+  <button class="btn" type="button" onclick="downloadFrame()">Download Current Frame (PNG)</button>
+  <button class="btn btn--ghost" type="button" onclick="restartAnim()">Restart Animation</button>
+  <a class="btn btn--ghost" href="index.html">← Back to Site</a>
+</div>
+
+<div class="note">
+  <p><strong>How to use:</strong> Open this page in a browser. The animation auto-plays and loops every 8 seconds. To share on social: take a screenshot at any frame, OR use your OS screen recorder (Windows: Win+G, Mac: Cmd+Shift+5) to capture the loop as video. The PNG button captures the current frame at full 1080×1080 resolution.</p>
+  <p><strong>Important disclaimer:</strong> This is a <strong>campaign graphic</strong> produced by the Broomfield County Republicans. It is <strong>not</strong> an official seal, logo, or emblem of the City and County of Broomfield government. The map silhouette is stylized for visual effect. Paid for by the Broomfield County Republicans.</p>
+</div>
+
+<script>
+  // Restart animation by removing/re-adding the animation property
+  function restartAnim() {
+    document.querySelectorAll('.wave-group, .crest, .star-pulse, .red-bar').forEach(function (el) {
+      const oldAnim = el.style.animation;
+      el.style.animation = 'none';
+      void el.offsetHeight;
+      el.style.animation = '';
+    });
+  }
+
+  // Capture the current SVG state as a PNG download
+  function downloadFrame() {
+    const svg = document.querySelector('svg.frame');
+    // Inline computed styles so the captured SVG renders correctly out of context
+    const clone = svg.cloneNode(true);
+    // Wrap in proper xmlns
+    clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    const xml = new XMLSerializer().serializeToString(clone);
+    const svg64 = btoa(unescape(encodeURIComponent(xml)));
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = function () {
+      const canvas = document.createElement('canvas');
+      canvas.width = 1080;
+      canvas.height = 1080;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, 1080, 1080);
+      const link = document.createElement('a');
+      link.download = 'broomfield-red-wave-' + Date.now() + '.png';
+      link.href = canvas.toDataURL('image/png');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    };
+    img.onerror = function () {
+      alert('Could not export PNG. Use your operating system screenshot tool instead (Windows: Win+Shift+S, Mac: Cmd+Shift+4).');
+    };
+    img.src = 'data:image/svg+xml;base64,' + svg64;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Vercel
+.vercel/
+
+# Local notes / drafts (uncomment to skip the preview/scratch files)
+# preview-hero.html
+# redwave.html
+# _partials.html
