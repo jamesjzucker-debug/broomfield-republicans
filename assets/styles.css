@@ -33,6 +33,46 @@
   --nav-h: 76px;
 }
 
+/* ------------- skip-to-content link (a11y) ------------- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  background: var(--red);
+  color: #fff;
+  padding: 12px 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.86rem;
+  text-decoration: none;
+  border: 2px solid #fff;
+}
+.skip-link:focus {
+  left: 8px;
+  top: 8px;
+  color: #fff;
+  outline: 3px solid #fff;
+}
+
+/* ------------- reduced motion (a11y) ------------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee__track,
+  .seismograph__line {
+    animation: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
 /* ------------- reset ------------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
