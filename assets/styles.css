@@ -652,6 +652,160 @@ p {
 }
 .footer__bottom p { margin: 0; color: #666; }
 
+/* ------------- Red Book (voter guide) race cards ------------- */
+.race-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 32px; }
+@media (max-width: 800px) { .race-grid { grid-template-columns: 1fr; gap: 24px; } }
+
+.race-card {
+  border: 3px solid var(--ink-soft);
+  background: #fff;
+  padding: 36px 32px 28px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+.race-card--endorsed {
+  border-color: var(--red);
+  box-shadow: 8px 8px 0 var(--black);
+}
+.race-card--neutral {
+  border-color: var(--navy);
+  background: var(--bg-soft);
+}
+.race-card__badge {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  position: absolute;
+  top: -14px;
+  left: 24px;
+}
+.race-card__badge--endorsed { background: var(--red); color: #fff; }
+.race-card__badge--neutral { background: var(--navy); color: #fff; }
+.race-card__office {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.race-card__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: var(--ink);
+  margin: 4px 0 14px;
+}
+.race-card__candidates { margin: 12px 0 14px; padding: 0; list-style: none; }
+.race-card__candidate {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.race-card__candidate:last-child { border-bottom: 0; }
+.race-card--neutral .race-card__candidate { border-bottom-color: rgba(0,47,97,0.12); }
+.race-card__photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), var(--red));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.race-card__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.race-card__candidate-info { flex: 1; min-width: 0; }
+.race-card__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  color: var(--ink);
+  line-height: 1;
+  margin: 0 0 4px;
+  display: block;
+}
+.race-card__name--endorsed { color: var(--red); }
+.race-card__detail {
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.race-card__note {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  margin: auto 0 0;
+  padding-top: 14px;
+}
+.race-card__note strong { color: var(--ink); }
+.race-card__link {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--red);
+  border-bottom: 2px solid var(--red);
+  padding-bottom: 3px;
+  display: inline-block;
+  margin-top: 14px;
+  align-self: flex-start;
+}
+.race-card__link:hover { color: var(--black); border-color: var(--black); }
+
+/* Red Book intro banner */
+.redbook-banner {
+  background: var(--red);
+  color: #fff;
+  padding: 40px 44px;
+  border: 4px solid var(--black);
+  box-shadow: 12px 12px 0 var(--black);
+  margin: 0 0 48px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.redbook-banner h2 { color: #fff; margin: 0 0 12px; }
+.redbook-banner p { color: rgba(255,255,255,.95); margin: 0; }
+.redbook-banner .btn-row { justify-self: end; }
+@media (max-width: 800px) {
+  .redbook-banner { grid-template-columns: 1fr; padding: 28px; }
+  .redbook-banner .btn-row { justify-self: start; }
+}
+
+/* Race tier heading */
+.tier-heading {
+  display: flex; align-items: baseline; gap: 16px;
+  border-bottom: 4px solid var(--black);
+  padding-bottom: 14px;
+  margin: 64px 0 8px;
+  flex-wrap: wrap;
+}
+.tier-heading h2 { margin: 0; }
+.tier-heading .tier-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.tier-intro { margin: 4px 0 0; max-width: 64ch; color: var(--ink-soft); }
+
 /* ------------- legal / prose document pages ------------- */
 .legal { max-width: 760px; margin: 0 auto; }
 .legal .effective-date {
