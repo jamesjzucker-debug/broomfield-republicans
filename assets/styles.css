@@ -748,8 +748,18 @@ a.race-card__photo:focus-visible {
   line-height: 1;
   margin: 0 0 4px;
   display: block;
+  text-decoration: none;
+  transition: color 0.15s ease;
 }
 .race-card__name--endorsed { color: var(--red); }
+a.race-card__name { color: inherit; }
+a.race-card__name:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+a.race-card__name--endorsed:hover { text-decoration-color: var(--black); }
 .race-card__detail {
   font-size: 0.86rem;
   color: var(--ink-soft);
