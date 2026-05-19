@@ -873,6 +873,18 @@ a.race-card__name--endorsed:hover { text-decoration-color: var(--black); }
 .legal ul li, .legal ol li { margin-bottom: 8px; }
 .legal a { color: var(--red); text-decoration: underline; }
 .legal a:hover { color: var(--red-dark); }
+/* override .legal link styles for buttons inside legal/prose blocks */
+.legal a.btn { text-decoration: none; }
+.legal a.btn--red,
+.legal a.btn--navy,
+.legal a.btn--black { color: #fff; }
+.legal a.btn--red:hover,
+.legal a.btn--navy:hover,
+.legal a.btn--black:hover { color: #fff; text-decoration: none; }
+.legal a.btn--ghost { color: var(--black); }
+.legal a.btn--ghost:hover { color: #fff; text-decoration: none; }
+.legal a.btn--ghost-light { color: #fff; }
+.legal a.btn--ghost-light:hover { color: var(--black); text-decoration: none; }
 .legal .legal-callout {
   margin: 32px 0;
   padding: 20px 24px;
