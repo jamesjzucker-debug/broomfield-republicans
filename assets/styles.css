@@ -727,8 +727,19 @@ p {
   letter-spacing: 0.04em;
   flex-shrink: 0;
   overflow: hidden;
+  text-decoration: none;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 .race-card__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+a.race-card__photo { cursor: pointer; }
+a.race-card__photo:hover {
+  box-shadow: 0 0 0 3px var(--red);
+  transform: scale(1.05);
+}
+a.race-card__photo:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+}
 .race-card__candidate-info { flex: 1; min-width: 0; }
 .race-card__name {
   font-family: 'Bebas Neue', sans-serif;
