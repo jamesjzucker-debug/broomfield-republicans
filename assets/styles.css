@@ -284,6 +284,55 @@ p {
   .nav__toggle { display: block; }
 }
 
+/* ---- desktop nav dropdown (Take Action) ---- */
+.nav__has-dropdown { position: relative; }
+.nav__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 232px;
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--red);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity .15s ease, transform .15s ease, visibility .15s;
+  z-index: 60;
+}
+.nav__has-dropdown:hover .nav__dropdown,
+.nav__has-dropdown:focus-within .nav__dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.nav__dropdown li { display: block; }
+.nav__dropdown a {
+  display: block;
+  padding: 10px 18px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+.nav__dropdown a::after { display: none !important; }
+.nav__dropdown a:hover { background: var(--bg-soft); color: var(--red); }
+
+/* indented sub-items in the mobile menu */
+.mobile-menu .mobile-sub a {
+  padding-left: 26px;
+  font-size: 0.9rem;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+}
+.mobile-menu .mobile-sub a::before {
+  content: "\2192\00a0";
+  color: var(--red);
+}
+
 .mobile-menu {
   display: none;
   background: #fff;
