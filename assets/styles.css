@@ -235,8 +235,8 @@ p {
   height: var(--nav-h);
   gap: 24px;
 }
-.nav__brand { display: flex; align-items: center; gap: 14px; }
-.nav__brand img { height: 56px; width: auto; }
+.nav__brand { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.nav__brand img { height: 56px; width: auto; max-width: none; flex-shrink: 0; object-fit: contain; }
 
 .nav__links {
   display: flex; gap: 2px; align-items: center;
