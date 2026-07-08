@@ -579,7 +579,7 @@ p {
 }
 .tier--featured h3 { color: #fff; }
 .tier--featured p { color: #EDEDED; }
-.tier--featured ul li { border-color: #2A2A2A; color: #fff; }
+.tier.tier--featured ul li { border-color: #3A3A3A; color: #F2F2F2; }
 .tier--featured::before {
   content: "MOST POPULAR";
   position: absolute; top: -16px; left: 32px;
