@@ -150,9 +150,50 @@
           </div>
           <p style="margin: 12px 0 0; font-size: .85rem; color: var(--ink-soft);">Ladies Night pricing: women shoot $10, men $26. We cover gun rentals and bring the pizza. Rental firearms, eye and ear protection, and targets are on site. Just bring a friend and a photo ID.</p>
         </div>
-        <div class="btn-row" style="margin-bottom: 10px;">
-          <a class="btn btn--red" href="mailto:Chairman@BroomfieldRepublicans.org?subject=Community%20Range%20Night%20RSVP&amp;body=I'd%20like%20to%20RSVP%20for%20Community%20Range%20Night.%20Name%20and%20number%20of%20guests%3A">RSVP &amp; Sign In Advance &rarr;</a>
-        </div>
+        <style>details.rsvp > summary{list-style:none;}details.rsvp > summary::-webkit-details-marker{display:none;}details.rsvp[open] > summary{display:none;}</style>
+        <details class="rsvp" style="margin-bottom: 10px;">
+          <summary class="btn btn--red" style="cursor:pointer; justify-content:center;">RSVP &amp; Sign In Advance &rarr;</summary>
+          <form data-formlite="range-night" method="POST" style="margin-top: 16px; padding: 18px; background: #fff; border: 1px solid var(--line); border-radius: 10px;">
+            <input type="hidden" name="event" value="Community Range Night RSVP" />
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <label style="display:block; font-size:.82rem; font-weight:700; color:var(--navy);">First Name
+                <input required name="first_name" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit;" />
+              </label>
+              <label style="display:block; font-size:.82rem; font-weight:700; color:var(--navy);">Last Name
+                <input required name="last_name" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit;" />
+              </label>
+            </div>
+            <label style="display:block; margin-top:12px; font-size:.82rem; font-weight:700; color:var(--navy);">Email
+              <input required type="email" name="email" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit;" />
+            </label>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top:12px;">
+              <label style="display:block; font-size:.82rem; font-weight:700; color:var(--navy);">Phone (optional)
+                <input type="tel" name="phone" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit;" />
+              </label>
+              <label style="display:block; font-size:.82rem; font-weight:700; color:var(--navy);">In your party
+                <select name="guests" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit; background:#fff;">
+                  <option>Just me</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5 or more</option>
+                </select>
+              </label>
+            </div>
+            <label style="display:block; margin-top:12px; font-size:.82rem; font-weight:700; color:var(--navy);">Experience level
+              <select name="experience" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit; background:#fff;">
+                <option>First time at the range</option>
+                <option>Some experience</option>
+                <option>Experienced shooter</option>
+              </select>
+            </label>
+            <label style="display:block; margin-top:12px; font-size:.82rem; font-weight:700; color:var(--navy);">Anything we should know? (optional)
+              <textarea name="notes" rows="2" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit;"></textarea>
+            </label>
+            <button class="btn btn--red btn--lg" type="submit" style="margin-top:16px; width:100%; justify-content:center;">Send RSVP &rarr;</button>
+            <p class="muted" style="font-size:.82rem; margin: 10px 0 0;">First-timers welcome. Bring a friend and a photo ID. We will confirm details by email and never share your information.</p>
+          </form>
+        </details>
         <p class="muted" style="margin: 0; font-size:.9rem;"><strong>Then every third Thursday of the month</strong> &middot; All experience levels welcome</p>
       </div>
     </div>
@@ -226,5 +267,6 @@
 </footer>
 
 <script src="assets/script.js"></script>
+<script src="assets/js/formlite.js" defer></script>
 </body>
 </html>
