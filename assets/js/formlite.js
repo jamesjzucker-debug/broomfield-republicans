@@ -26,7 +26,6 @@
     "run-for-office": "",
     "school-board": "",
     "young-republicans": "",
-    "raffle": "db9e8df2-e042-472a-85ca-4338cc485d71",
     "range-night": "66c47b22-4725-4b0a-9d42-3ddef687643b"
   };
 
