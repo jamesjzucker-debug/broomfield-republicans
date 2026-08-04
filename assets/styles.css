@@ -1132,14 +1132,19 @@ a.race-card__name--endorsed:hover { text-decoration-color: var(--black); }
 .manifesto .manifesto-outro span { color: var(--red); padding: 0 10px; }
 
 /* footer motto line (persistent tagline across every page) */
-.footer__motto {
+.footer__brand { container-type: inline-size; }
+.footer__motto,
+.footer__brand p.footer__motto {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.25rem;
-  letter-spacing: 0.08em;
   color: var(--red-bright);
   margin: 8px 0 18px;
+  max-width: none;          /* override .footer__brand p 36ch clamp */
+  white-space: nowrap;      /* keep the motto on one line */
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;                          /* fallback: no container-query units */
+  font-size: clamp(0.7rem, 4.85cqw, 1.25rem);  /* scales to the footer brand column */
 }
-.footer__motto span { color: #fff; padding: 0 8px; }
+.footer__motto span { color: #fff; padding: 0 5px; }
 
 /* star strip — small flag accent for between sections */
 .star-strip {
