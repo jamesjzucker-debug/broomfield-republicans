@@ -26,7 +26,10 @@
     "run-for-office": "",
     "school-board": "",
     "young-republicans": "",
-    "range-night": "66c47b22-4725-4b0a-9d42-3ddef687643b"
+    "range-night": "66c47b22-4725-4b0a-9d42-3ddef687643b",
+    // Meet & Greet Happy Hour, Aug 13 2026 (events.html #campaign-stop).
+    // Remove this line when that featured section comes off the events page.
+    "campaign-stop": "f32a93fc-2985-40cf-b7c5-8e31cb86b30d"
   };
 
   function endpointFor(id) {
