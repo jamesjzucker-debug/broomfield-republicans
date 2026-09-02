@@ -1,0 +1,5 @@
+# watchdog.html and this watchdog/ folder share a name. Without this,
+# Apache redirects /watchdog to /watchdog/ before the parent .htaccess
+# can serve watchdog.html. Keep this file alongside the parent one.
+DirectorySlash Off
+Options -Indexes

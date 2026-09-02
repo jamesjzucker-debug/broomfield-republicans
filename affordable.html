@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Broomfield Families Need Colorado To Be Affordable</title>
+<meta name="description" content="Broomfield water and sewer rates went up in 2024 and again in 2025, and staff has proposed another increase for 2027. Two questions on the November ballot show up on a household bill." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Broomfield Families Need Colorado To Be Affordable" />
+<meta property="og:description" content="What already went up, what is on the November ballot, and the ten minutes that settle it." />
+<meta property="og:url" content="https://broomfieldrepublicans.org/affordable" />
+<link rel="canonical" href="https://broomfieldrepublicans.org/affordable" />
+<link rel="icon" href="assets/img/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3EADA;
+    --paper-lit:#FAF4E8;
+    --paper-deep:#E9DCC6;
+    --paper-edge:#D8C7A9;
+    --navy:#1F3A63;
+    --navy-deep:#16294A;
+    --navy-ink:#0E1D35;
+    --red:#B93327;
+    --red-deep:#8E241B;
+    --gold:#F0B323;
+    --ink:#241F1A;
+    --ink-soft:#5C544A;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+    font-size:18px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  /* paper grain over the whole page */
+  body::after{
+    content:"";
+    position:fixed;inset:0;pointer-events:none;z-index:60;
+    opacity:.26;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='240' height='240' filter='url(%23n)' opacity='0.5'/></svg>");
+  }
+
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px;position:relative;z-index:2;}
+
+  /* ---------- shared display type ---------- */
+  .display{
+    font-family:'Anton',Impact,'Arial Narrow',sans-serif;
+    font-weight:400;
+    text-transform:uppercase;
+    line-height:0.90;
+    letter-spacing:0.012em;
+    margin:0;
+  }
+  .kicker{
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    font-weight:600;
+    letter-spacing:0.18em;
+    font-size:0.78rem;
+  }
+  /* distressed print edge, display type only, never body copy */
+  .rough{filter:url(#roughen);}
+
+  /* ---------- brush banners ---------- */
+  .brush{
+    display:inline-block;
+    position:relative;
+    padding:.30em 1.05em .38em;
+    color:#FDF8EE;
+    font-family:'Anton',Impact,sans-serif;
+    text-transform:uppercase;
+    line-height:1;
+  }
+  .brush::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background-repeat:no-repeat;background-size:100% 100%;
+  }
+  .brush--red::before{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 120' preserveAspectRatio='none'><path d='M6 34 C40 18 92 26 140 20 C196 13 250 25 306 18 C360 11 418 24 470 17 C512 12 560 22 594 12 L590 104 C548 114 500 100 452 108 C398 117 344 103 288 110 C232 117 178 104 124 111 C82 116 40 105 10 112 Z' fill='%23B93327'/></svg>");
+  }
+  .brush--navy::before{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 120' preserveAspectRatio='none'><path d='M10 30 C52 14 98 28 148 21 C202 13 254 27 308 19 C362 11 416 26 468 18 C514 11 558 24 592 14 L588 102 C544 112 498 98 448 106 C392 115 340 101 286 109 C230 117 176 103 122 110 C80 115 42 103 8 110 Z' fill='%231F3A63'/></svg>");
+  }
+
+  /* ---------- star / dash rules ---------- */
+  .starrule{
+    display:flex;align-items:center;gap:14px;
+    margin:22px 0 18px;max-width:560px;
+  }
+  .starrule::before,.starrule::after{
+    content:"";flex:1;height:2px;
+    background-image:linear-gradient(to right,var(--navy) 0 8px,transparent 8px 14px);
+    background-size:14px 2px;opacity:.55;
+  }
+  .starrule span{color:var(--navy);font-size:1rem;line-height:1;}
+  .dash{
+    display:inline-block;width:46px;height:9px;background:var(--red);
+    vertical-align:.22em;
+    clip-path:polygon(3% 8%,100% 0,97% 92%,0 100%);
+  }
+
+  /* ---------- HERO (the mailer front) ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:radial-gradient(130% 100% at 12% 0%, var(--paper-lit) 0%, var(--paper) 52%, var(--paper-deep) 100%);
+    border-bottom:6px solid var(--navy);
+    padding:62px 0 0;
+  }
+  .hero__art{
+    position:absolute;right:-4%;bottom:-2px;
+    width:min(52%,560px);pointer-events:none;
+  }
+  .hero__inner{padding-bottom:78px;}
+  .hero__inner > *{max-width:min(660px,64%);}
+  .hero h1{
+    font-size:clamp(2.7rem,8.6vw,5.15rem);
+    color:var(--navy);
+  }
+  .hero__band{margin:18px 0 0;}
+  .hero__band .brush--red{font-size:clamp(1.35rem,4.4vw,2.35rem);}
+  .hero__band .brush--red.big{font-size:clamp(2.3rem,7.6vw,4.35rem);margin-top:8px;}
+  .hero__lines{margin:6px 0 0;}
+  .hero__lines p{
+    margin:0 0 6px;
+    font-family:'Oswald',sans-serif;font-weight:600;
+    text-transform:uppercase;letter-spacing:.02em;
+    font-size:clamp(1rem,2.9vw,1.42rem);
+    transform:skewX(-8deg);transform-origin:left;
+    color:var(--red);
+  }
+  .hero__lines p.on-navy{
+    color:#FDF8EE;display:inline-block;padding:.14em .6em .2em;
+    background:var(--navy);
+    clip-path:polygon(1% 12%,100% 2%,99% 90%,0 100%);
+  }
+  .hero__sub{
+    margin:30px 0 0;max-width:32em;
+    font-size:clamp(1.04rem,2.3vw,1.22rem);font-weight:500;
+  }
+
+  /* ---------- sections ---------- */
+  section{padding:66px 0;position:relative;}
+  .section-head{margin-bottom:30px;}
+  .section-head .kicker{color:var(--red);display:block;margin-bottom:12px;}
+  .section-head h2{
+    font-family:'Anton',Impact,sans-serif;font-weight:400;text-transform:uppercase;
+    line-height:0.96;font-size:clamp(1.95rem,5.6vw,3.15rem);
+    color:var(--navy);margin:0;max-width:19ch;
+  }
+  .lede{font-size:1.10rem;max-width:63ch;margin:16px 0 0;}
+
+  /* ---------- group subheads inside a section ---------- */
+  .subhead{
+    display:flex;align-items:baseline;gap:14px;
+    margin:52px 0 0;
+    font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;
+    letter-spacing:0.13em;font-size:0.86rem;color:var(--red);
+  }
+  .subhead::after{content:"";flex:1;height:2px;background:var(--paper-edge);}
+  .subhead:first-of-type{margin-top:34px;}
+  .ballot .subhead{color:var(--gold);}
+  .ballot .subhead::after{background:rgba(240,179,35,.28);}
+
+  /* ---------- rate history ---------- */
+  .stack{margin:18px 0 0;border-top:4px solid var(--navy);}
+  .item{
+    display:grid;grid-template-columns:126px 1fr;gap:26px;
+    padding:26px 0;border-bottom:1px solid var(--paper-edge);align-items:start;
+  }
+  .item__year{
+    font-family:'Anton',Impact,sans-serif;font-size:2.45rem;line-height:1;
+    color:var(--red);padding-top:2px;
+  }
+  .item__year.sm{font-size:1.5rem;line-height:1.06;}
+  .item__year span{
+    display:block;font-family:'Oswald',sans-serif;font-size:0.64rem;
+    letter-spacing:0.16em;color:var(--ink-soft);font-weight:600;margin-top:8px;
+  }
+  .item h3{
+    font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;
+    letter-spacing:0.03em;font-size:1.16rem;margin:0 0 8px;color:var(--navy);
+  }
+  .item p{margin:0;font-size:1.01rem;}
+  .src{display:block;margin-top:10px;font-size:0.82rem;color:var(--ink-soft);font-style:italic;}
+
+  .quote{
+    margin:46px 0 0;background:var(--navy);color:var(--paper-lit);
+    padding:34px 34px 30px;border-left:10px solid var(--gold);
+  }
+  .quote blockquote{
+    margin:0;font-family:'Oswald',sans-serif;font-weight:500;
+    font-size:clamp(1.18rem,3.2vw,1.6rem);line-height:1.3;
+  }
+  .quote cite{
+    display:block;margin-top:16px;font-style:normal;font-family:'Inter',sans-serif;
+    font-size:0.92rem;color:#C3D2E3;
+  }
+
+  /* ---------- ballot ---------- */
+  .ballot{
+    background:var(--navy);color:var(--paper-lit);
+    border-top:7px solid var(--red);border-bottom:7px solid var(--red);
+  }
+  .ballot .section-head h2{color:var(--paper-lit);}
+  .ballot .section-head .kicker{color:var(--gold);}
+  .ballot .lede{color:#DBE4EF;}
+  .qgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:22px;}
+  .qgrid--two{grid-template-columns:repeat(2,1fr);}
+  @media (max-width:720px){.qgrid--two{grid-template-columns:1fr;}}
+  .q{
+    background:var(--paper);color:var(--ink);padding:28px 26px 26px;
+    border-top:9px solid var(--red);box-shadow:0 16px 38px rgba(0,0,0,.30);
+  }
+  .q h3{
+    font-family:'Anton',Impact,sans-serif;font-weight:400;text-transform:uppercase;
+    font-size:1.55rem;line-height:1.02;margin:0 0 6px;color:var(--navy);
+  }
+  .q .tag{
+    font-family:'Oswald',sans-serif;font-size:0.70rem;letter-spacing:0.16em;
+    text-transform:uppercase;font-weight:600;color:var(--red);display:block;margin-bottom:14px;
+  }
+  .q p{margin:0 0 12px;font-size:1.0rem;}
+  .q p:last-child{margin-bottom:0;}
+  .q .flag{
+    margin-top:16px;padding-top:14px;border-top:1px dashed var(--paper-edge);
+    font-size:0.94rem;color:var(--ink-soft);
+  }
+  .fine{margin-top:32px;font-size:0.95rem;color:#C2D0E0;max-width:72ch;}
+  .q--wide{grid-column:1/-1;}
+  .q--note{background:rgba(243,234,218,.10);color:#DCE5EE;border-top-color:var(--gold);box-shadow:none;}
+  .q--note h3{color:var(--paper-lit);}
+  .q--note .tag{color:var(--gold);}
+  .q--note .flag{color:#B9C8D8;border-top-color:rgba(255,255,255,.18);}
+  .q h4{
+    font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;
+    letter-spacing:0.04em;font-size:0.98rem;margin:18px 0 6px;color:var(--navy);
+  }
+  .q h4:first-of-type{margin-top:0;}
+
+  /* ---------- CTA ---------- */
+  .cta{
+    text-align:center;position:relative;overflow:hidden;
+    background:radial-gradient(130% 90% at 50% 0%, var(--paper-lit) 0%, var(--paper) 58%, var(--paper-deep) 100%);
+    padding:76px 0 84px;
+  }
+  .cta h2{
+    font-family:'Anton',Impact,sans-serif;font-weight:400;text-transform:uppercase;
+    color:var(--navy);font-size:clamp(2.1rem,6.6vw,3.6rem);line-height:0.96;
+    margin:0 auto;max-width:14ch;
+  }
+  .cta .brush--navy{margin-top:20px;font-size:clamp(1.15rem,3.9vw,2rem);}
+  .steps{list-style:none;counter-reset:s;margin:44px auto 0;padding:0;max-width:640px;text-align:left;}
+  .steps li{
+    counter-increment:s;position:relative;padding:16px 0 16px 64px;
+    border-bottom:1px solid var(--paper-edge);font-size:1.06rem;font-weight:500;
+  }
+  .steps li::before{
+    content:counter(s);position:absolute;left:0;top:12px;width:42px;height:42px;
+    background:var(--red);color:var(--paper-lit);font-family:'Anton',Impact,sans-serif;
+    font-size:1.34rem;display:flex;align-items:center;justify-content:center;
+    clip-path:polygon(4% 6%,100% 0,96% 96%,0 100%);
+  }
+  .btnrow{margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;font-family:'Oswald',sans-serif;font-weight:600;
+    text-transform:uppercase;letter-spacing:0.09em;font-size:0.95rem;
+    padding:16px 30px;text-decoration:none;border:3px solid var(--navy);
+    transition:transform .12s ease,background .12s ease,color .12s ease;
+  }
+  .btn--solid{background:var(--navy);color:var(--paper-lit);}
+  .btn--solid:hover{background:var(--navy-deep);transform:translateY(-2px);}
+  .btn--ghost{background:transparent;color:var(--navy);}
+  .btn--ghost:hover{background:var(--navy);color:var(--paper-lit);transform:translateY(-2px);}
+  .cta__note{margin:28px auto 0;max-width:54ch;font-size:0.98rem;color:var(--ink-soft);}
+  .cta__more{
+    margin:34px auto 0;max-width:60ch;padding-top:26px;
+    border-top:1px solid var(--paper-edge);font-size:1rem;
+  }
+  .cta__more a{color:var(--red);font-weight:600;}
+
+  /* ---------- footer ---------- */
+  .foot{background:var(--navy-ink);color:#B4C3D4;padding:36px 0 42px;font-size:0.88rem;}
+  .foot a{color:#F0DDB6;}
+  .foot p{margin:0 0 10px;max-width:82ch;}
+  .foot .disc{
+    font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.12em;
+    font-size:0.80rem;color:var(--paper-lit);font-weight:600;
+  }
+
+  @media (max-width:760px){
+    .hero__art{width:88%;right:-16%;bottom:-10px;opacity:.28;}
+    .hero__inner{padding-bottom:52px;}
+    .hero__inner > *{max-width:100%;}
+    .hero__sub{max-width:100%;}
+  }
+  @media (max-width:640px){
+    body{font-size:17px;}
+    .hero{padding:40px 0 0;}
+    .item{grid-template-columns:1fr;gap:10px;}
+    .item__year{font-size:2rem;display:flex;align-items:baseline;gap:12px;}
+    .item__year span{margin-top:0;}
+    .quote{padding:26px 22px;}
+    .btn{width:100%;text-align:center;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<!-- distress filter used by the display headlines -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="roughen">
+    <feTurbulence type="fractalNoise" baseFrequency="0.028 0.09" numOctaves="4" seed="7" result="t"/>
+    <feDisplacementMap in="SourceGraphic" in2="t" scale="2.4" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<!-- ===================== HERO: the mailer front ===================== -->
+<header class="hero">
+
+  <svg class="hero__art" viewBox="0 0 620 460" aria-hidden="true" focusable="false">
+    <!-- Colorado C sun -->
+    <g transform="translate(352,10)">
+      <path d="M185.2 50.8 A95 95 0 1 0 185.2 185.2"
+            fill="none" stroke="#B93327" stroke-width="46" stroke-linecap="butt"/>
+      <circle cx="118" cy="118" r="42" fill="#F0B323"/>
+      <g stroke="#8E241B" stroke-width="1.3" opacity=".28">
+        <path d="M40 58 L198 176 M28 96 L208 140 M50 32 L186 204 M26 142 L210 94 M42 188 L194 48"/>
+      </g>
+    </g>
+
+    <!-- engraved mountains -->
+    <g>
+      <path d="M60 460 L188 214 L246 288 L318 176 L392 292 L452 226 L560 372 L620 316 L620 460 Z" fill="#E9EEF5"/>
+      <path d="M60 460 L188 214 L246 288 L318 176 L392 292 L452 226 L560 372 L620 316 L620 460 Z" fill="none" stroke="#1F3A63" stroke-width="3"/>
+      <!-- snow caps -->
+      <path d="M188 214 L216 268 L228 252 L240 276 L204 288 L176 262 Z" fill="#FBF7EF" stroke="#1F3A63" stroke-width="1.4"/>
+      <path d="M318 176 L346 226 L358 210 L372 240 L332 254 L300 226 Z" fill="#FBF7EF" stroke="#1F3A63" stroke-width="1.4"/>
+      <path d="M452 226 L474 268 L484 254 L496 278 L462 290 L436 266 Z" fill="#FBF7EF" stroke="#1F3A63" stroke-width="1.4"/>
+      <!-- hatching -->
+      <g stroke="#1F3A63" stroke-width="1.6" opacity=".55">
+        <path d="M196 246 L172 300 M212 268 L188 330 M232 286 L206 352 M252 306 L226 372
+                 M330 214 L306 272 M348 236 L322 300 M368 258 L342 322 M388 282 L362 348
+                 M462 250 L440 306 M482 274 L458 334 M504 300 L480 358 M526 326 L502 384
+                 M560 372 L540 416 M116 330 L96 380 M140 300 L118 356"/>
+      </g>
+      <g stroke="#1F3A63" stroke-width="1.2" opacity=".30">
+        <path d="M206 230 L242 274 M330 196 L372 240 M470 244 L512 292"/>
+      </g>
+      <!-- treeline, back row -->
+      <g fill="#1F3A63" opacity=".38">
+        <path d="M18 460 L30 412 L42 460 Z M62 460 L72 424 L82 460 Z M104 460 L118 402 L132 460 Z
+                 M170 460 L180 428 L190 460 Z M228 460 L242 406 L256 460 Z M292 460 L302 430 L312 460 Z
+                 M356 460 L370 404 L384 460 Z M424 460 L434 428 L444 460 Z M498 460 L512 408 L526 460 Z
+                 M566 460 L576 430 L586 460 Z"/>
+      </g>
+      <!-- treeline, front row -->
+      <g fill="#1F3A63" opacity=".92">
+        <path d="M36 460 L52 396 L68 460 Z M86 460 L98 426 L110 460 Z M136 460 L154 386 L172 460 Z
+                 M196 460 L208 422 L220 460 Z M248 460 L266 390 L284 460 Z M312 460 L324 428 L336 460 Z
+                 M348 460 L366 392 L384 460 Z M404 460 L416 424 L428 460 Z M448 460 L466 388 L484 460 Z
+                 M510 460 L522 426 L534 460 Z M548 460 L566 394 L584 460 Z M598 460 L610 424 L620 460 Z"/>
+      </g>
+    </g>
+  </svg>
+
+  <div class="wrap hero__inner">
+    <h1 class="display rough">Broomfield<br>Families Need</h1>
+
+    <div class="hero__band">
+      <span class="brush brush--red rough">Colorado to be</span><br>
+      <span class="brush brush--red big rough">Affordable!</span>
+    </div>
+
+    <div class="starrule"><span>&#9733;</span></div>
+
+    <div class="hero__lines">
+      <p>It&rsquo;s time for leaders who are</p>
+      <p class="on-navy">Committed to making</p>
+      <p>Colorado affordable again.</p>
+    </div>
+
+    <p class="hero__sub">Everything in Broomfield costs more than it did in 2024. Some of that is already settled. The rest is on the ballot that shows up in your mailbox in October.</p>
+  </div>
+</header>
+
+<!-- ===================== PART ONE ===================== -->
+<section id="bills">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Part one</span>
+      <h2 class="rough">Where your bills have been going</h2>
+    </div>
+    <p class="lede">Some of this came from Broomfield. Some of it came from the state. All of it arrives at the same address.</p>
+
+    <p class="subhead">In Broomfield</p>
+
+    <div class="stack">
+      <div class="item">
+        <div class="item__year">2025<span>In effect</span></div>
+        <div>
+          <h3>An average bill went from $80.05 to $119.90</h3>
+          <p>Ordinances 2253 and 2255, adopted October 22, 2024, took effect January 1, 2025. Those are the city&rsquo;s own figures for an average single family bill, water, sewer and stormwater together. An increase of $39.85 a month.</p>
+          <p>Of that, $11 was a stormwater charge that had never been billed before. The water base fee went from $16.93 to $36.91.</p>
+          <span class="src">City of Broomfield utility rate FAQ, 2025 estimated impact per average household.</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item__year">2026<span>In effect</span></div>
+        <div>
+          <h3>Year two, up 15 percent</h3>
+          <p>Ordinance 2286, adopted October 14, 2025, took effect January 1, 2026. The city&rsquo;s outlook puts the average bill at $138.05.</p>
+          <span class="src">City of Broomfield, Ordinance 2286; utility rate FAQ four year outlook.</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item__year">2028<span>Projected</span></div>
+        <div>
+          <h3>The plan ends at $158.22</h3>
+          <p>The city publishes a four year outlook: $119.90, then $138.05, then $148.11, then $158.22. Seven percent in 2027 and again in 2028. Staff recommended staying on that plan at the July 21, 2026 study session.</p>
+          <p>Read the whole line and an average monthly bill roughly doubles from where it stood in 2024. The later years are projections, not adopted rates.</p>
+          <span class="src">City of Broomfield utility rate FAQ, four year outlook; study session July 21, 2026.</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item__year sm">In<br>fairness<span>Context</span></div>
+        <div>
+          <h3>What the city says back</h3>
+          <p>Broomfield&rsquo;s average utility bill was the lowest among comparable neighboring communities before any of this, and the city expects it will still not be the highest afterward. Utilities here are enterprise funds, which by law cannot be paid for out of tax revenue.</p>
+          <p>The city also objects to the shorthand, writing that calling it a 50 percent increase &ldquo;generally is misleading&rdquo; because it combines three utilities. That is why the dollars are used above instead. If the bill is a hardship, Broomfield runs a Utility Rate Assistance Fund.</p>
+          <span class="src">City of Broomfield utility rate FAQ.</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="subhead">From the state</p>
+
+    <div class="stack">
+      <div class="item">
+        <div class="item__year">2024<span>In effect</span></div>
+        <div>
+          <h3>Your gas bill went up</h3>
+          <p>Xcel asked for about $171 million. State regulators approved $130.76 million, about $4.57 a month on an average residential bill, roughly 7.7 percent. Rates were effective November 5, 2024, though the increase was deferred and did not reach bills until February 2025, when the Winter Storm Uri charge came off.</p>
+          <span class="src">Colorado Public Utilities Commission, Proceeding 24AL-0049G, deliberations concluded October 25, 2024.</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item__year">2026<span>In effect</span></div>
+        <div>
+          <h3>Your electric bill went up last month</h3>
+          <p>Xcel asked for about $356 million. A settlement would have made it $225 million. The commission rejected that and approved roughly $157 million, a 4.77 percent residential increase, about $5.00 a month. New rates took effect August 29.</p>
+          <p>Worth saying plainly: regulators cut the request by more than half. The bill still went up, from about $104.91 to $109.92 for an average household.</p>
+          <p>One commissioner put the longer worry on the record, noting that Xcel had tripled its capital spending since 2021 while electricity sales declined: &ldquo;if capital spending and rates continue to grow at levels considerably faster than inflation, electricity may simply become unaffordable for many customers.&rdquo;</p>
+          <span class="src">Colorado Public Utilities Commission, Proceeding 25AL-0494E, decision August 20, 2026.</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item__year">2026<span>In effect</span></div>
+        <div>
+          <h3>The delivery fee rose again</h3>
+          <p>Colorado charges a flat fee on deliveries by motor vehicle that include at least one item subject to sales tax. It was 27 cents when it started in 2022 and is 31 cents as of July 1, 2026. It has moved both directions in between, but the trend is up.</p>
+          <p>It is charged once per delivery no matter how many items are in the box. The legislature created it in 2021 and wrote in an annual inflation adjustment, so the rate now moves every July without a further vote. Businesses under $500,000 in prior year sales are exempt, and a retailer may absorb the fee rather than pass it on.</p>
+          <span class="src">Colorado Department of Revenue, retail delivery fee rate schedule and guidance; SB21-260.</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item__year sm">Every<br>paycheck<span>Standing</span></div>
+        <div>
+          <h3>The paid leave deduction</h3>
+          <p>Not an increase, a permanent line. The state paid family leave program takes 0.44 percent of your wages, up to $184,500 in earnings. On a $65,000 salary that is about $286 a year, every year, unless your employer chooses to cover it. Employers with ten or more workers pay a matching 0.44 percent; smaller employers are exempt from the match.</p>
+          <p>Colorado voters created the program in 2020, and it pays wage replacement to workers who take leave for a new child or a serious illness. The rate is recalculated by the state each year under a statutory formula and was trimmed from 0.90 to 0.88 percent for 2026.</p>
+          <span class="src">Colorado Family and Medical Leave Insurance Division, 2026 premium rate and small business rules.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote">
+      <blockquote>Not one of these was a big number on its own.</blockquote>
+      <cite>They arrive at the same address, in the same month, out of the same paycheck. That is what makes them add up.</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PART TWO ===================== -->
+<section class="ballot" id="ballot">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Part two</span>
+      <h2 class="rough">What is on your ballot in November</h2>
+    </div>
+    <p class="lede">One Broomfield question and a statewide slate. Not every one of these lands on a household bill, and we say so where it does not. All of them are open until the envelopes come back.</p>
+
+    <p class="subhead">Broomfield questions</p>
+
+    <div class="qgrid qgrid--two">
+      <article class="q">
+        <span class="tag">Your utility bill</span>
+        <h3>The Xcel franchise question</h3>
+        <p>A franchise agreement running from January 1, 2028 through December 31, 2048. Twenty years. The 3 percent franchise fee does not change, and Xcel continues contributing 1 percent of electric gross revenue toward the underground conversion program.</p>
+        <p>Xcel collects the franchise fee from customers and remits all of it to the city, so it is a pass-through. It appears as a line on Xcel bills, gas as well as electric. Households served by United Power rather than Xcel would not see this particular fee.</p>
+        <p class="flag">Referred on second reading July 7, 2026. The fee is not going up. What is on the table is locking the arrangement in until 2048.</p>
+      </article>
+
+      <article class="q">
+        <span class="tag">Permanent by design</span>
+        <h3>The lodging tax question</h3>
+        <p>Resolution 2026-105 refers a lodging tax increase from 1.6 percent to 6 percent, dedicated to the Broomfield Housing Alliance. The tax applies to hotels, motels and short term rentals. It raises about $900,000 a year now and would raise about $3.3 million. The stated reason for the timing is that inclusionary housing revenue is projected to reach zero at the end of 2027.</p>
+        <p>Two things to be straight about. The 1.6 percent rate has stood since voters approved it in 1997, and even at 6 percent Broomfield would sit below Thornton, Westminster, Boulder, Aurora and Wheat Ridge, which run 7 to 10 percent. And visitors pay most of a lodging tax, though residents booking a room here pay it too.</p>
+        <p>The reason to read this one closely is that it is built to be permanent. Asked about a sunset, the City and County Manager answered on the record: <strong>&ldquo;You can&rsquo;t sunset a tax if you have already taken bonds out on those funds.&rdquo;</strong> She explained that lenders require a sustainable revenue stream over 25 to 30 years, which is what makes a sunset difficult.</p>
+        <p class="flag">That is staff being candid, not an accusation, and it is the whole point. One election, and it stays. Referred to the November 3 ballot on August 11, 2026.</p>
+      </article>
+    </div>
+
+    <p class="fine" style="margin-top:22px">Broomfield expects three local questions this November. The third is a district attorney term limit question, which extends the maximum from eight years to twelve. It carries no cost to a household, so it is not broken out here. Broomfield publishes its own local voter guide rather than relying on the state Blue Book, and it will carry all three.</p>
+
+    <p class="subhead">Statewide measures</p>
+
+    <div class="qgrid qgrid--two">
+      <article class="q">
+        <span class="tag">The income tax</span>
+        <h3>Initiative 195</h3>
+        <p>Would end Colorado&rsquo;s single flat income tax rate and replace it with six brackets. Rates below $100,000 come down. The top rate reaches 8.40 percent on income over $1 million.</p>
+        <p>Start with the part that cuts against us, because you will find it anyway. State analysts put the break-even near $510,000 of income. Below that, most filers would owe modestly less on next year&rsquo;s return.</p>
+        <p>The case against it is not next year&rsquo;s return. It is that the flat rate is the protection. Colorado&rsquo;s constitution requires one rate for everyone, so a rate increase has to be argued in front of every voter at once. Brackets end that. A bracket threshold is a number a future legislature can lower. A constitutional provision is not.</p>
+        <p>The revenue is also built on a narrow and highly mobile group of filers. Estimates run from about $2 billion a year to the state&rsquo;s own maximum figure of $2.7 billion, which is a wide spread for a budget to depend on, and the people it depends on are the ones most able to file from somewhere else.</p>
+        <p class="flag">Signatures went in on August 3, the fewest of any measure headed for this ballot, and because it amends the constitution it also needs 2 percent of registered voters in every one of the 35 senate districts. Certification was still pending when this page was written. Check whether it made your ballot.</p>
+      </article>
+
+      <article class="q">
+        <span class="tag">The other half of that fight</span>
+        <h3>Initiative 232</h3>
+        <p>The answer to 195 on the same ballot. Would lock Colorado&rsquo;s income tax rate at 4.40 percent, where it already sits, starting in 2027.</p>
+        <p>State analysts scored its own effect on revenue at zero, and that is honest. It changes nothing on any return by itself. What it changes is how much room a future legislature has to move the rate.</p>
+        <p class="flag">Certified August 20 with 184,454 signatures. Passes on a simple majority. If both this and 195 pass, the one with more yes votes controls wherever the two conflict. Exactly how the rest would fit together is genuinely disputed.</p>
+      </article>
+
+      <article class="q">
+        <span class="tag">Your TABOR refund</span>
+        <h3>Two refund questions</h3>
+        <p>Separate measures, same mechanism. Neither raises a tax rate. Both let the state keep money it would otherwise send back to taxpayers.</p>
+        <h4>Initiative 308</h4>
+        <p>Exempts the sales tax already collected on sporting goods from TABOR, roughly $175 to $180 million a year, and routes it to a new conservation and wildfire fund. Legislative analysts say it reduces refunds by about the same amount.</p>
+        <h4>Proposition NN</h4>
+        <p>Senate Bill 26-135, referred by the legislature on a party line vote. Lets the state keep revenue above the TABOR cap for K-12 schools and children&rsquo;s programs.</p>
+        <p>This is the larger of the two by far. The final fiscal note projects refunds of $329.9 million in 2026-27 and $521.0 million in 2027-28 under current law, and expects this measure to eliminate them.</p>
+        <p class="flag">Neither does anything in a year the state collects under the cap. Colorado voters have turned down every attempt to lift that cap in the last decade, most recently Proposition HH in 2023.</p>
+      </article>
+
+      <article class="q">
+        <span class="tag">What you pay to drive</span>
+        <h3>Initiative 175</h3>
+        <p>Would require the vehicle and fuel taxes you already pay to go to roads, bridges and the State Patrol rather than into the general pot.</p>
+        <p>A companion law signed in June would temporarily cut fuel taxes and registration fees from January 2027 through June 2030, but only if this measure passes.</p>
+        <p class="flag">Certified June 23. A redirection of money already collected, not a new tax. Whatever it moves to roads has to come out of something else.</p>
+      </article>
+
+      <article class="q">
+        <span class="tag">Heating and cooking</span>
+        <h3>Initiative 177</h3>
+        <p>A constitutional amendment declaring a right to buy natural gas for home heating and cooking, and a right for utilities to sell it.</p>
+        <p>It sets no rate and collects nothing, so it will not lower a bill. Its effect would be to limit how far the state or a city can go in restricting gas hookups and appliances.</p>
+        <p class="flag">Certified in August. As a constitutional amendment it needs 55 percent to pass, not a simple majority.</p>
+      </article>
+    </div>
+
+    <p class="fine">Citizen initiatives are listed here by initiative number, which is how the state tracks them until certification. Colorado assigns the Amendment letters and Proposition numbers in early September, so those will read differently on your ballot. Measures referred by the legislature already have theirs, which is why Proposition NN appears by name. Broomfield question numbers and certified titles are not final until the county sets the ballot. Read the title in front of you, and check any figure on this page against the record yourself.</p>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="cta" id="return-your-ballot">
+  <div class="wrap">
+    <h2 class="rough">None of it is decided yet</h2>
+    <p><span class="brush brush--navy rough">Whoever mails the ballot back decides it.</span></p>
+
+    <ol class="steps">
+      <li>Your ballot arrives in the mail in October. Every active registered voter in Colorado gets one.</li>
+      <li>Fill it out at the kitchen table, with the ballot questions in front of you.</li>
+      <li>Sign the envelope. An unsigned envelope does not count.</li>
+      <li>Drop it in any Broomfield drop box, or put it back in the mail. Ten minutes.</li>
+    </ol>
+
+    <div class="btnrow">
+      <a class="btn btn--solid" href="https://www.GoVoteColorado.gov" target="_blank" rel="noopener">Check your registration</a>
+      <a class="btn btn--ghost" href="https://colorado.ballottrax.net" target="_blank" rel="noopener">Track your ballot</a>
+    </div>
+
+    <p class="cta__note">Registration and ballot tracking are run by the state, not by us. Both links go straight there.</p>
+
+    <p class="cta__more">The candidates and ballot questions from the mailer are all in the 2026 guide: <a href="redbook.html">Broomfield 2026 Election Guide &rarr;</a></p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="foot">
+  <div class="wrap">
+    <p class="disc">Paid for by the Broomfield County Republicans.</p>
+    <p>Political donations are not tax exempt. Every figure on this page is sourced to a public record: City of Broomfield ordinances and study session materials, Colorado Public Utilities Commission proceedings, the Department of Revenue, the FAMLI Division, and Legislative Council Staff fiscal notes. Each item names its source. Find something wrong and we will fix it: <a href="mailto:Chairman@BroomfieldRepublicans.org">Chairman@BroomfieldRepublicans.org</a></p>
+    <p><a href="index.html">BroomfieldRepublicans.org</a> &nbsp;&middot;&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

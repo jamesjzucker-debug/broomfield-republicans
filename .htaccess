@@ -1,0 +1,31 @@
+# ============================================================
+# Broomfield County Republicans - clean URLs
+# /about serves about.html, and /about.html 301s to /about.
+# To roll back: delete this file. Nothing else depends on it.
+# ============================================================
+
+<IfModule mod_negotiation.c>
+  Options -MultiViews
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1. /index.html -> /   (and /dir/index.html -> /dir/)
+  RewriteCond %{THE_REQUEST} \s/+(.*?)index\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # 2. /page.html -> /page
+  #    Keyed on THE_REQUEST, the literal request line, so rule 3 cannot
+  #    feed back into this rule and create a redirect loop.
+  RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # 3. /page -> serves page.html internally, address bar stays clean.
+  #    No !-d test here on purpose: watchdog.html and the watchdog/
+  #    folder both exist and the page has to win. Deeper paths such as
+  #    /watchdog/<recap> still resolve normally.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.+?)/?$ /$1.html [L]
+</IfModule>
