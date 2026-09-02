@@ -15,3 +15,21 @@ desktop.ini
 # preview-hero.html
 # redwave.html
 # _partials.html
+
+# ------------------------------------------------------------------
+# Unpublished Watchdog recaps                     (added 2026-09-02)
+#
+# The weekly Watchdog task writes a new recap page into watchdog/
+# every week. Those drafts are NOT ready to go live, and having them
+# sit in GitHub Desktop meant unchecking them on every single commit.
+# This hides the unpublished ones so the changes list stays clean.
+#
+# This does NOT affect the four recaps already published. Git ignores
+# only untracked files, so those still show up normally if edited.
+#
+# TO PUBLISH A RECAP: comment out the line below, commit the recap
+# page together with the matching card in watchdog.html, then
+# uncomment it again. The cards and the pages must go up together or
+# the Watchdog page will link to something that is not there.
+# ------------------------------------------------------------------
+watchdog/*.html
