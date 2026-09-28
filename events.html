@@ -101,9 +101,40 @@
     <span class="eyebrow" style="color: var(--red-bright);">Help shape the calendar</span>
     <h2 style="color: #fff;">Got an idea for an event?</h2>
     <p style="color: #B5B5B5;">We have a lot of ideas for events (happy hours, BBQs in the park, candidate meet-and-greets, watch parties) and we need volunteers to help bring them to life. Got an idea, or want to help run one we've already cooked up? Tell the Chair.</p>
-    <div class="btn-row" style="justify-content: center; margin-top: 22px;">
-      <a class="btn btn--red btn--lg" href="mailto:Chairman@BroomfieldRepublicans.org?subject=Event%20Idea">Email the Chair &rarr;</a>
-    </div>
+    <!-- Event idea form: Formlite key "event-idea" in assets/js/formlite.js. Goes to the Chairman inbox and Discord. -->
+    <style>details.idea > summary{list-style:none;display:inline-flex;}details.idea > summary::-webkit-details-marker{display:none;}details.idea[open] > summary{display:none;}@media (max-width:520px){.idea__row{grid-template-columns:1fr !important;}}</style>
+    <details class="idea" style="margin-top: 22px;">
+      <summary class="btn btn--red btn--lg" style="cursor:pointer; justify-content:center;">Message the Chair &rarr;</summary>
+      <form data-formlite="event-idea" action="https://forms.bcrserver.org/s/26fab2e9-eb7d-40a2-ad00-d33c130d976e" method="POST" style="margin-top: 8px; padding: 22px; background: #fff; border-radius: 10px; text-align: left;">
+        <input type="hidden" name="form" value="Event Idea (events page)" />
+        <div class="idea__row" style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <label style="display:block; font-size:.82rem; font-weight:700; color:var(--navy);">Name
+            <input required name="name" autocomplete="name" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit; background:#fff;" />
+          </label>
+          <label style="display:block; font-size:.82rem; font-weight:700; color:var(--navy);">Email
+            <input required type="email" name="email" autocomplete="email" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit; background:#fff;" />
+          </label>
+        </div>
+        <div class="idea__row" style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top:12px;">
+          <label style="display:block; font-size:.82rem; font-weight:700; color:var(--navy);">Phone (optional)
+            <input type="tel" name="phone" autocomplete="tel" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit; background:#fff;" />
+          </label>
+          <label style="display:block; font-size:.82rem; font-weight:700; color:var(--navy);">I want to
+            <select name="interest" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit; background:#fff;">
+              <option>Suggest an event idea</option>
+              <option>Help run an event</option>
+              <option>Both</option>
+              <option>Something else</option>
+            </select>
+          </label>
+        </div>
+        <label style="display:block; font-size:.82rem; font-weight:700; color:var(--navy); margin-top:12px;">Your idea or message
+          <textarea required name="message" rows="4" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit; background:#fff;"></textarea>
+        </label>
+        <button class="btn btn--red btn--lg" type="submit" style="margin-top:16px; width:100%; justify-content:center;">Send to the Chair &rarr;</button>
+        <p class="muted" style="font-size:.82rem; margin: 10px 0 0;">Goes straight to the Chair. We never share your information.</p>
+      </form>
+    </details>
   </div>
 </section>
 

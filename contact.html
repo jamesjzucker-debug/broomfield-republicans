@@ -122,8 +122,8 @@
       </div>
     </div>
     <div class="card" style="padding: 8px;">
-      <!-- Contact form using FormSubmit.io; see get-involved.html for setup notes -->
-      <form action="https://formsubmit.co/Chairman@BroomfieldRepublicans.org" method="POST" style="padding: 20px;" data-formlite="contact">
+      <!-- Contact form: Formlite key "contact" in assets/js/formlite.js. Goes to the Chairman inbox and Discord. -->
+      <form action="https://forms.bcrserver.org/s/d4abd999-946b-42be-bbba-dbc75b09185e" method="POST" style="padding: 20px;" data-formlite="contact">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 14px;">
           <label style="display:block; font-size:.82rem; font-weight:700; color:var(--navy);">First Name
             <input required name="first_name" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit;" />
@@ -149,8 +149,7 @@
         <label style="display:block; margin-top:14px; font-size:.82rem; font-weight:700; color:var(--navy);">Message
           <textarea required name="message" rows="5" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit;"></textarea>
         </label>
-        <input type="hidden" name="_subject" value="New contact form message" />
-        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="form" value="Contact page" />
         <button class="btn btn--red btn--lg" type="submit" style="margin-top:18px; width:100%; justify-content:center;">Send Message →</button>
         <p class="muted" style="font-size: .82rem; margin: 12px 0 0;">We'll never share or sell your contact info.</p>
       </form>
