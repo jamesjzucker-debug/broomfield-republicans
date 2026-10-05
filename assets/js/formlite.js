@@ -27,7 +27,8 @@
     "school-board": "",
     "young-republicans": "",
     "range-night": "66c47b22-4725-4b0a-9d42-3ddef687643b",
-    "event-idea": "26fab2e9-eb7d-40a2-ad00-d33c130d976e"
+    "event-idea": "26fab2e9-eb7d-40a2-ad00-d33c130d976e",
+    "ballot-questions": "7baf6c91-e3fe-4da2-bf9b-a9f055a1df8b"
   };
 
   function endpointFor(id) {

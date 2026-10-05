@@ -108,6 +108,17 @@ ul.measures.no li b{color:var(--no)}
   .arrow{clip-path:none;padding:10px 14px 7px}
 }
 
+
+/* ---------- below the sheet: lookup + questions (screen only) ---------- */
+.extras{max-width:816px;margin:0 auto 48px;padding:0 16px;display:grid;gap:28px}
+.extras section{background:#fff;border-top:6px solid var(--red);padding:24px;box-shadow:0 10px 40px rgba(0,0,0,.12)}
+.extras h2{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;color:var(--navy);font-size:34px;line-height:1;letter-spacing:.02em;margin-bottom:6px}
+.extras .intro{font-size:15px;color:var(--soft);margin-bottom:16px;line-height:1.45}
+.extras .bl{box-shadow:none;border:1px solid #E4E0DA}
+.extras .btn{display:block;width:100%;margin-top:16px;padding:15px;font-size:.85rem}
+.extras .fine{font-size:.82rem;color:var(--soft);margin-top:10px}
+@media print{.extras{display:none}}
+
 /* ---------- print: exactly one letter page ---------- */
 @page{size:letter;margin:0}
 @media print{
@@ -123,6 +134,7 @@ ul.measures.no li b{color:var(--no)}
 <div class="toolbar">
   <a class="back" href="redbook">&larr; Back to the 2026 Election Guide</a>
   <div class="btns">
+    <a class="btn btn--navy" href="#my-ballot">Find My Ballot</a>
     <button class="btn" type="button" onclick="window.print()">Print this guide</button>
     <a class="btn btn--navy" href="assets/voter-guide-2026.pdf" download>Download PDF</a>
   </div>
@@ -168,9 +180,9 @@ ul.measures.no li b{color:var(--no)}
 
       <h2 class="bar">Justices &amp; Judges</h2>
       <ul class="list">
-        <li><span class="who red">Vote NO on ALL justices &amp; judges</span></li>
+        <li><span class="who">No recommendation. Do your own research.</span></li>
       </ul>
-      <p class="note">One Colorado Supreme Court justice, six Court of Appeals judges and five 17th Judicial District judges are up for retention.</p>
+      <p class="note">One Colorado Supreme Court justice, six Court of Appeals judges and five 17th Judicial District judges are up for retention. Read each judge's official evaluation at <a href="https://judicialperformance.colorado.gov/"><b>judicialperformance.colorado.gov</b></a>.</p>
 
       <div class="how">
         <h3>How to Vote in Broomfield</h3>
@@ -231,5 +243,44 @@ ul.measures.no li b{color:var(--no)}
   <p class="paid">Paid for by the Broomfield County Republicans. Political donations are not tax exempt.</p>
 </main>
 
+
+<div class="extras">
+  <section id="my-ballot">
+    <h2>Find Your Sample Ballot</h2>
+    <p class="intro">Broomfield has five different ballots this year depending on your ward and school district. Enter your address to see which one you'll get and open the official sample ballot from the Broomfield Clerk.</p>
+    <div data-ballot-lookup></div>
+  </section>
+
+  <section id="questions">
+    <h2>Questions About Your Ballot?</h2>
+    <p class="intro">Not sure what a measure does, why we recommend what we do, or where to drop off your ballot? Send us your question and we'll get back to you.</p>
+    <form data-formlite="ballot-questions" action="https://forms.bcrserver.org/s/7baf6c91-e3fe-4da2-bf9b-a9f055a1df8b" method="POST">
+      <input type="hidden" name="form" value="Ballot Question (Voter Guide)" />
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+        <label style="display:block;font-size:.82rem;font-weight:700;color:#002F61;">Name<input required name="name" autocomplete="name" style="margin-top:6px;width:100%;padding:10px 12px;border:1px solid #CFC9C0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff;" /></label>
+        <label style="display:block;font-size:.82rem;font-weight:700;color:#002F61;">Email<input required type="email" name="email" autocomplete="email" style="margin-top:6px;width:100%;padding:10px 12px;border:1px solid #CFC9C0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff;" /></label>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px;">
+        <label style="display:block;font-size:.82rem;font-weight:700;color:#002F61;">Phone (optional)<input type="tel" name="phone" autocomplete="tel" style="margin-top:6px;width:100%;padding:10px 12px;border:1px solid #CFC9C0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff;" /></label>
+        <label style="display:block;font-size:.82rem;font-weight:700;color:#002F61;">My question is about
+          <select name="topic" style="margin-top:6px;width:100%;padding:10px 12px;border:1px solid #CFC9C0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff;">
+            <option>A candidate</option>
+            <option>A statewide amendment or proposition</option>
+            <option>A Broomfield ballot question</option>
+            <option>Judges on the ballot</option>
+            <option>How, when or where to vote</option>
+            <option>Something else</option>
+          </select>
+        </label>
+      </div>
+      <label style="display:block;font-size:.82rem;font-weight:700;color:#002F61;margin-top:12px;">Your question<textarea required name="message" rows="4" style="margin-top:6px;width:100%;padding:10px 12px;border:1px solid #CFC9C0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff;"></textarea></label>
+      <button class="btn" type="submit">Send My Question &rarr;</button>
+      <p class="fine">Goes straight to the Chair. We never share your information.</p>
+    </form>
+  </section>
+</div>
+
+<script src="assets/js/formlite.js"></script>
+<script src="assets/js/ballot-lookup.js"></script>
 </body>
 </html>

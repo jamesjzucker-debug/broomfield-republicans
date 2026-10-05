@@ -131,15 +131,13 @@
 <!-- INTRO + SAMPLE BALLOT CTA -->
 <section class="section">
   <div class="container">
-    <div class="redbook-banner">
+    <div class="redbook-banner" id="my-ballot">
       <div>
         <span class="eyebrow" style="color: #FFE4D9;">Step 1 &middot; Know what's on YOUR ballot</span>
-        <h2>Look up your personalized sample ballot.</h2>
-        <p>The U.S. Vote Foundation, partnered with Ballotpedia, will show you every race and measure on your specific Broomfield ballot once you enter your address. Free. Non-partisan. Authoritative.</p>
+        <h2>Find your sample ballot.</h2>
+        <p>Broomfield has five different ballots this year depending on your ward and school district. Enter your address to see which one you'll get, what local questions are on it, and the official sample ballot from the Broomfield Clerk.</p>
       </div>
-      <div class="btn-row">
-        <a class="btn btn--black btn--xl" href="https://www.usvotefoundation.org/sample-ballot-lookup" target="_blank" rel="noopener">Look Up My Ballot &rarr;</a>
-      </div>
+      <div data-ballot-lookup></div>
     </div>
 
     <div style="max-width: 760px; margin: 0 auto;">
@@ -403,7 +401,7 @@
         <a class="race-card__link" href="run-for-office.html">Talk to the Chair &rarr;</a>
       </div>
       <p>For the 2027 cycle (school board, full Council slate, Mayor), the BCRC will publish endorsements under Article III.D of the bylaws. Watch this space.</p>
-      <p style="margin-top: 18px;"><a class="btn btn--ghost" href="https://www.broomfield.org/" target="_blank" rel="noopener">Broomfield.org &middot; Local Election Info &rarr;</a></p>
+      <p style="margin-top: 18px;"><a class="btn btn--ghost" style="white-space: normal;" href="https://www.broomfield.org/" target="_blank" rel="noopener">Broomfield.org &middot; Local Election Info &rarr;</a></p>
     </div>
   </div>
 </section>
@@ -454,6 +452,13 @@
         </ul>
         <p class="race-card__note">Amendment 87 needs only a simple majority to pass, not 55%.</p>
       </article>
+      <article class="race-card race-card--neutral">
+        <span class="race-card__badge race-card__badge--neutral">No Recommendation</span>
+        <div class="race-card__office">Judicial Retention</div>
+        <h3 class="race-card__title">Justices &amp; Judges</h3>
+        <p>One Colorado Supreme Court justice, six Court of Appeals judges and five 17th Judicial District judges are on the Broomfield ballot for retention. BCRC makes no recommendation on these. Do your own research: the state publishes an evaluation of every judge on the ballot.</p>
+        <p style="margin-top: 14px;"><a class="race-card__link" href="https://judicialperformance.colorado.gov/" target="_blank" rel="noopener">Read the Judicial Evaluations &rarr;</a></p>
+      </article>
     </div>
   </div>
 </section>
@@ -495,8 +500,50 @@
     <p style="margin-top: 32px;">
       <a class="btn btn--red" href="voter-guide">See the One-Page Voter Guide &rarr;</a>
       <a class="btn btn--ghost" href="assets/voter-guide-2026.pdf" download>Download PDF</a>
-      <a class="btn btn--ghost" href="https://www.broomfield.org/153/Elections" target="_blank" rel="noopener">Broomfield Sample Ballots &rarr;</a>
+      <a class="btn btn--ghost" style="white-space: normal;" href="https://www.broomfield.org/153/Elections" target="_blank" rel="noopener">Broomfield Sample Ballots &rarr;</a>
     </p>
+  </div>
+</section>
+
+<!-- BALLOT QUESTIONS -->
+<section class="section section--soft" id="questions">
+  <div class="container">
+    <div style="max-width: 720px; margin: 0 auto;">
+      <span class="eyebrow">Questions about your ballot?</span>
+      <h2>Ask us anything.</h2>
+      <p class="lead" style="margin-bottom: 20px;">Not sure what a measure does, why we recommend what we do, or where to drop off your ballot? Send us your question and we'll get back to you.</p>
+      <form data-formlite="ballot-questions" action="https://forms.bcrserver.org/s/7baf6c91-e3fe-4da2-bf9b-a9f055a1df8b" method="POST" style="padding: 22px; background: #fff; border: 1px solid var(--line); border-radius: 10px; text-align: left;">
+        <input type="hidden" name="form" value="Ballot Question (Red Book)" />
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+          <label style="display:block; font-size:.82rem; font-weight:700; color:var(--navy);">Name
+            <input required name="name" autocomplete="name" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit; background:#fff;" />
+          </label>
+          <label style="display:block; font-size:.82rem; font-weight:700; color:var(--navy);">Email
+            <input required type="email" name="email" autocomplete="email" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit; background:#fff;" />
+          </label>
+        </div>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top:12px;">
+          <label style="display:block; font-size:.82rem; font-weight:700; color:var(--navy);">Phone (optional)
+            <input type="tel" name="phone" autocomplete="tel" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit; background:#fff;" />
+          </label>
+          <label style="display:block; font-size:.82rem; font-weight:700; color:var(--navy);">My question is about
+            <select name="topic" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit; background:#fff;">
+              <option>A candidate</option>
+              <option>A statewide amendment or proposition</option>
+              <option>A Broomfield ballot question</option>
+              <option>Judges on the ballot</option>
+              <option>How, when or where to vote</option>
+              <option>Something else</option>
+            </select>
+          </label>
+        </div>
+        <label style="display:block; font-size:.82rem; font-weight:700; color:var(--navy); margin-top:12px;">Your question
+          <textarea required name="message" rows="4" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit; background:#fff;"></textarea>
+        </label>
+        <button class="btn btn--red btn--lg" type="submit" style="margin-top:16px; width:100%; justify-content:center;">Send My Question &rarr;</button>
+        <p class="muted" style="font-size:.82rem; margin: 10px 0 0;">Goes straight to the Chair. We never share your information.</p>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -578,5 +625,7 @@
 </footer>
 
 <script src="assets/script.js"></script>
+<script src="assets/js/formlite.js"></script>
+<script src="assets/js/ballot-lookup.js"></script>
 </body>
 </html>
