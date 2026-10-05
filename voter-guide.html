@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>2026 Voter Guide &middot; Broomfield County Republicans</title>
+<meta name="description" content="The Broomfield County Republicans 2026 voter guide. Our Republican nominees and our recommendations on every statewide and Broomfield ballot measure for the November 3, 2026 election." />
+<link rel="canonical" href="https://broomfieldrepublicans.org/voter-guide" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://broomfieldrepublicans.org/voter-guide" />
+<meta property="og:title" content="Broomfield 2026 Voter Guide" />
+<meta property="og:description" content="Every Republican on the Broomfield ballot and how we recommend voting on every statewide and local measure. One page. Print it, share it, vote it." />
+<meta property="og:image" content="https://broomfieldrepublicans.org/assets/img/voter-guide-2026.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="assets/img/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<!--
+  Broomfield County Republicans 2026 one-page voter guide.
+  Modeled on the Jeffco GOP 2026 guide, rebuilt for Broomfield ballots.
+  Standalone page (no styles.css, no site nav) so it prints as a single letter-size sheet.
+  Sources, all checked 2026-10-05:
+    - Broomfield official sample ballots, styles 101-05, 110-02, 209-04, 413-01, 513-03 (linked from broomfield.org/153/Elections)
+    - Broomfield TABOR notices: broomfield.org/DocumentCenter/View/69245, 69246, 69247
+    - CO SOS ballot certification 2026-09-04 and 2026 Blue Book
+    - broomfield.org/1872 (drop boxes and voting centers), broomfield.org/3530 (dates)
+  Statewide measure numbers and descriptions match the official ballot text.
+-->
+<style>
+:root{
+  --red:#C22600; --red-dark:#8E1B00; --navy:#002F61; --navy-dark:#001A38;
+  --ink:#0F1722; --soft:#44546B; --paper:#FFFFFF; --page-bg:#E9E5DF;
+  --yes:#1F7A33; --no:#C22600;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--page-bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.3}
+a{color:inherit}
+
+/* ---------- screen toolbar (hidden in print) ---------- */
+.toolbar{max-width:816px;margin:24px auto 14px;padding:0 16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.toolbar a.back{font-weight:700;font-size:.85rem;text-decoration:none;color:var(--navy)}
+.toolbar .btns{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:800 .78rem/1 'Inter',sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;padding:11px 16px;border-radius:4px;background:var(--red);color:#fff}
+.btn--navy{background:var(--navy)}
+
+/* ---------- the sheet: 8.5 x 11 at 96dpi ---------- */
+.sheet{width:816px;min-height:1056px;margin:0 auto 40px;background:var(--paper);box-shadow:0 10px 40px rgba(0,0,0,.18);padding:16px 30px 12px;display:flex;flex-direction:column;border-top:6px solid var(--navy);border-bottom:6px solid var(--navy)}
+
+.masthead{display:flex;align-items:center;gap:16px;padding-bottom:8px}
+.masthead img{width:150px;height:auto;flex:none}
+.masthead h1{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;color:var(--navy);font-size:48px;line-height:.92;letter-spacing:.01em}
+.masthead p{font-family:'Bebas Neue',Impact,sans-serif;color:var(--navy);font-size:23px;letter-spacing:.06em;margin-top:6px}
+.masthead p span{color:var(--red)}
+
+.banner{background:var(--red);color:#fff;text-align:center;font-family:'Bebas Neue',Impact,sans-serif;font-size:40px;letter-spacing:.05em;line-height:1;padding:7px 10px 4px;margin:2px 0 10px;box-shadow:inset 0 -4px 0 var(--red-dark)}
+
+.cols{display:grid;grid-template-columns:1fr 1.08fr;gap:20px;flex:1}
+
+/* section bars: navy bar with red chevron, like the Jeffco piece */
+.bar{position:relative;background:var(--navy);color:#fff;font-family:'Bebas Neue',Impact,sans-serif;font-size:27px;letter-spacing:.05em;line-height:1;padding:6px 10px 3px 46px;margin:10px 0 6px;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.bar::before{content:"";position:absolute;left:0;top:0;bottom:0;width:34px;background:var(--red);clip-path:polygon(0 0,62% 0,100% 50%,62% 100%,0 100%)}
+.bar:first-child{margin-top:0}
+.bar--yes::before{background:var(--yes)}
+.bar--red{background:var(--red)}
+.bar--red::before{background:var(--navy)}
+.bar small{font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;vertical-align:middle;margin-left:6px;opacity:.85}
+
+ul.list{list-style:none;padding-left:4px}
+ul.list li{position:relative;padding-left:13px;font-size:12.6px;font-weight:700;margin:0 0 4px}
+ul.list li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:5px;border-radius:50%;background:var(--ink)}
+ul.list li .who{color:var(--navy);font-weight:800}
+ul.list li .who.red{color:var(--red)}
+
+ul.measures li{font-size:11.6px;font-weight:600;margin-bottom:3.5px;line-height:1.25}
+ul.measures li b{font-weight:800}
+ul.measures.yes li b{color:var(--yes)}
+ul.measures.no li b{color:var(--no)}
+.sub{font-family:'Inter',sans-serif;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin:7px 0 4px 4px}
+.note{font-size:10.4px;color:var(--soft);font-weight:600;margin:2px 0 0 4px;line-height:1.3}
+
+.how{margin-top:10px;border:2px solid var(--navy);padding:8px 10px 7px}
+.how h3{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;font-size:21px;letter-spacing:.05em;color:var(--navy);line-height:1;margin-bottom:5px}
+.how p{font-size:11px;font-weight:600;margin-bottom:4px;line-height:1.3}
+.how p b{color:var(--red)}
+
+.cta{display:flex;align-items:center;gap:18px;margin-top:12px}
+.cta .visit{flex:1;font-weight:800;font-size:14.5px;line-height:1.25;color:var(--ink)}
+.cta .visit a{color:var(--navy);text-decoration:none}
+.arrow{flex:none;background:var(--red);color:#fff;font-family:'Bebas Neue',Impact,sans-serif;font-size:27px;letter-spacing:.04em;line-height:1.02;text-align:center;padding:9px 18px 6px 40px;clip-path:polygon(28px 0,100% 0,100% 100%,28px 100%,0 50%)}
+.paid{margin-top:9px;text-align:center;color:var(--red);font-size:10.5px;font-weight:700;line-height:1.3}
+
+/* ---------- small screens: fluid single column ---------- */
+@media screen and (max-width:840px){
+  .sheet{width:auto;min-height:0;margin:0 0 24px;padding:18px 16px 16px;box-shadow:none}
+  .masthead{flex-direction:column;align-items:flex-start;gap:8px}
+  .masthead img{width:130px}
+  .masthead h1{font-size:40px}
+  .masthead p{font-size:19px}
+  .banner{font-size:30px}
+  .cols{grid-template-columns:1fr;gap:0}
+  ul.list li{font-size:15px}
+  ul.measures li{font-size:14px}
+  .how p{font-size:13.5px}
+  .note{font-size:12.5px}
+  .cta{flex-direction:column;align-items:stretch}
+  .arrow{clip-path:none;padding:10px 14px 7px}
+}
+
+/* ---------- print: exactly one letter page ---------- */
+@page{size:letter;margin:0}
+@media print{
+  body{background:#fff}
+  .toolbar{display:none}
+  .sheet{width:8.5in;height:11in;min-height:0;margin:0;box-shadow:none;overflow:hidden}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a class="back" href="redbook">&larr; Back to the 2026 Election Guide</a>
+  <div class="btns">
+    <button class="btn" type="button" onclick="window.print()">Print this guide</button>
+    <a class="btn btn--navy" href="assets/voter-guide-2026.pdf" download>Download PDF</a>
+  </div>
+</div>
+
+<main class="sheet" id="main">
+
+  <header class="masthead">
+    <img src="assets/img/logo.png" alt="Broomfield GOP" />
+    <div>
+      <h1>Broomfield County<br />Republicans</h1>
+      <p>2026 General Election <span>&bull;</span> November 3, 2026</p>
+    </div>
+  </header>
+
+  <div class="banner">2026 Official Voter Guide</div>
+
+  <div class="cols">
+
+    <!-- ===== LEFT: candidates ===== -->
+    <section>
+      <h2 class="bar">Federal</h2>
+      <ul class="list">
+        <li>U.S. Senate: <span class="who">Mark Baisley</span></li>
+        <li>U.S. House, District 7: <span class="who">Tim Bennett</span></li>
+      </ul>
+
+      <h2 class="bar">Statewide</h2>
+      <ul class="list">
+        <li>Governor / Lt. Governor: <span class="who">Victor Marx / George Washington Markert</span></li>
+        <li>Secretary of State: <span class="who">James Wiley</span></li>
+        <li>State Treasurer: <span class="who">Kevin Grantham</span></li>
+        <li>Attorney General: <span class="who">Michael J. Allen</span></li>
+        <li>State Board of Education, District 7: <span class="who">Steve Barton</span></li>
+        <li>CU Board of Regents, District 7: <span class="who">Paul Mueller</span></li>
+      </ul>
+
+      <h2 class="bar">Colorado Legislature</h2>
+      <ul class="list">
+        <li>State Senate District 25: <span class="who">Paul Kohlhoff</span></li>
+        <li>State House District 33: <span class="who">Nate Jorgensen</span></li>
+      </ul>
+
+      <h2 class="bar">Justices &amp; Judges</h2>
+      <ul class="list">
+        <li><span class="who red">Vote NO on ALL justices &amp; judges</span></li>
+      </ul>
+      <p class="note">One Colorado Supreme Court justice, six Court of Appeals judges and five 17th Judicial District judges are up for retention.</p>
+
+      <div class="how">
+        <h3>How to Vote in Broomfield</h3>
+        <p>Ballots were mailed <b>October 2</b>. Didn't get one? Call the Broomfield Elections Division at 303-464-5857.</p>
+        <p><b>7 drop boxes</b>, open 24 hours through 7 p.m. on Election Day, including the George Di Ciero City and County Building (One DesCombes Dr.) and the Paul Derda Rec Center.</p>
+        <p>In-person voting at the Di Ciero Building starts <b>October 19</b>. Four voting centers are open 7 a.m. to 7 p.m. on November 3.</p>
+        <p>Mailing it back? Do it by <b>October 26</b>. After that, use a drop box.</p>
+      </div>
+    </section>
+
+    <!-- ===== RIGHT: measures ===== -->
+    <section>
+      <h2 class="bar bar--yes">Vote Yes</h2>
+      <ul class="list measures yes">
+        <li><b>Amendment 81:</b> Police notify federal immigration authorities about certain criminal suspects</li>
+        <li><b>Amendment 82:</b> Constitutional right to buy and sell natural gas for home &amp; business</li>
+        <li><b>Amendment 83:</b> Constitutional right to hunt &amp; fish</li>
+        <li><b>Amendment 84:</b> Requires voter ID on mail ballots</li>
+        <li><b>Amendment 85:</b> Requires clear, plain-language ballot titles &amp; summaries</li>
+        <li><b>Amendment 86:</b> Limits off-cycle congressional redistricting</li>
+        <li><b>Proposition 132:</b> Increases penalties for fentanyl crimes</li>
+        <li><b>Proposition 133:</b> Life sentences for human trafficking of a minor</li>
+        <li><b>Proposition 134:</b> School &amp; college sports teams based on biological sex</li>
+        <li><b>Proposition 135:</b> Prohibits surgery on a minor to alter biological sex</li>
+        <li><b>Proposition 136:</b> Caps Colorado's state income tax rate at 4.4%</li>
+      </ul>
+
+      <h2 class="bar bar--red">Vote No</h2>
+      <ul class="list measures no">
+        <li><b>Amendment 87:</b> Replaces Colorado's flat 4.4% income tax with graduated rates from 3.7% to 8.4%</li>
+        <li><b>Proposition NN:</b> Lets the state keep money that would otherwise come back to you as TABOR refunds</li>
+        <li><b>Proposition 137:</b> Moves sporting-goods sales tax revenue outside TABOR, shrinking refunds</li>
+      </ul>
+
+      <p class="sub">On every Broomfield ballot</p>
+      <ul class="list measures no">
+        <li><b>Broomfield 1A:</b> Lodging tax jumps from 1.6% to 6%, up to $3.3 million a year</li>
+        <li><b>Charter Amendment 1C:</b> Stretches mayoral terms to 4 years</li>
+        <li><b>Front Range Passenger Rail 7A:</b> $295 million a year sales tax increase, plus $580 million in debt</li>
+        <li><b>17th Judicial District 7E:</b> Loosens the DA's term limit from two terms to three</li>
+      </ul>
+
+      <p class="sub">On some Broomfield ballots</p>
+      <ul class="list measures no">
+        <li><b>Jeffco School District 5A:</b> $73 million tax increase</li>
+        <li><b>Jeffco School District 5B:</b> $60 million tax increase</li>
+        <li><b>Weld RE-8 School District 5C:</b> $4.9 million tax increase, plus extending $2.7 million in expiring taxes</li>
+      </ul>
+      <p class="note">Broomfield 1B, the 20-year Xcel Energy franchise renewal, is also on your ballot. It raises no tax. BCR takes no position.</p>
+    </section>
+  </div>
+
+  <div class="cta">
+    <p class="visit">Visit <a href="https://broomfieldrepublicans.org/redbook">broomfieldrepublicans.org/redbook</a> for more on our candidates and your Broomfield ballot.</p>
+    <div class="arrow">In-person voting starts Oct. 19<br />Ballots due by 7 PM Nov. 3</div>
+  </div>
+
+  <p class="paid">Paid for by the Broomfield County Republicans. Political donations are not tax exempt.</p>
+</main>
+
+</body>
+</html>
