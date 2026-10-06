@@ -60,10 +60,10 @@
         '<h2 class="vg-pop__title" id="vg-pop-title">Your 2026 Broomfield Voter Guide</h2>' +
         '<p class="vg-pop__text">Every Republican on your ballot and how we recommend voting on every statewide and Broomfield measure. One page. Keep it next to your ballot.</p>' +
       '</div>' +
-      '<a class="vg-pop__img" href="voter-guide"><img src="assets/img/voter-guide-2026-preview.jpg" width="1120" height="1450" alt="Broomfield County Republicans 2026 voter guide. Click to open the full guide." /></a>' +
+      '<a class="vg-pop__img" href="voter-guide"><img src="assets/img/voter-guide-2026-preview.jpg?v=20261005b" width="1120" height="1450" alt="Broomfield County Republicans 2026 voter guide. Click to open the full guide." /></a>' +
       '<div class="vg-pop__actions">' +
         '<a class="vg-pop__btn vg-pop__btn--red" href="voter-guide">See the Full Guide</a>' +
-        '<a class="vg-pop__btn" href="assets/voter-guide-2026.pdf" download>Download PDF</a>' +
+        '<a class="vg-pop__btn" href="assets/voter-guide-2026.pdf?v=20261005b" download>Download PDF</a>' +
         '<button class="vg-pop__later" type="button">Maybe later</button>' +
       '</div>' +
     '</div>';
