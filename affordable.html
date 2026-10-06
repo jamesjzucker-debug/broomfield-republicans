@@ -4,10 +4,12 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Broomfield Families Need Colorado To Be Affordable</title>
-<meta name="description" content="Broomfield water and sewer rates went up in 2024 and again in 2025, and staff has proposed another increase for 2027. Two questions on the November ballot show up on a household bill." />
+<meta name="description" content="What the Colorado legislature added to your bills, why both of Broomfield's legislative seats are held by appointees, and the 2026 Broomfield County Republicans voter guide." />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Broomfield Families Need Colorado To Be Affordable" />
-<meta property="og:description" content="What already went up, what is on the November ballot, and the ten minutes that settle it." />
+<meta property="og:image" content="https://broomfieldrepublicans.org/assets/img/voter-guide-2026.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:description" content="The fees the legislature added without a vote, two seats nobody elected, and our full 2026 voter guide." />
 <meta property="og:url" content="https://broomfieldrepublicans.org/affordable" />
 <link rel="canonical" href="https://broomfieldrepublicans.org/affordable" />
 <link rel="icon" href="assets/img/favicon.ico" />
@@ -248,6 +250,65 @@
   }
   .q h4:first-of-type{margin-top:0;}
 
+  /* ---------- VOTER GUIDE BAND ---------- */
+  .guide{
+    background:var(--red);color:#FDF8EE;
+    border-top:7px solid var(--navy);border-bottom:7px solid var(--navy);
+    padding:54px 0 58px;
+  }
+  .guide__inner{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;}
+  .guide .kicker{color:#F7D9A8;display:block;margin-bottom:14px;}
+  .guide h2{
+    font-family:'Anton',Impact,sans-serif;font-weight:400;text-transform:uppercase;
+    font-size:clamp(2.3rem,7vw,4.1rem);line-height:0.94;margin:0;color:#FFF6E6;
+  }
+  .guide p.guide__sub{margin:18px 0 0;font-size:1.12rem;max-width:40ch;color:#FFEBD2;font-weight:500;}
+  .guide .btnrow{justify-content:flex-start;margin-top:30px;}
+  .guide .btn{border-color:#FFF6E6;}
+  .guide .btn--solid{background:#FFF6E6;color:var(--red-deep);}
+  .guide .btn--solid:hover{background:#fff;color:var(--red-deep);}
+  .guide .btn--ghost{color:#FFF6E6;}
+  .guide .btn--ghost:hover{background:#FFF6E6;color:var(--red-deep);}
+  .guide__when{
+    margin:26px 0 0;font-family:'Oswald',sans-serif;font-weight:600;
+    text-transform:uppercase;letter-spacing:.1em;font-size:.84rem;color:#FFE1BC;
+  }
+  .guide__shot{display:block;width:100%;height:auto;border:5px solid #FFF6E6;box-shadow:0 22px 50px rgba(0,0,0,.4);}
+  @media (max-width:860px){
+    .guide__inner{grid-template-columns:1fr;gap:28px;}
+    .guide__shot{max-width:360px;margin:0 auto;}
+    .guide .btnrow{justify-content:center;}
+    .guide{text-align:center;}
+    .guide p.guide__sub{margin-left:auto;margin-right:auto;}
+  }
+
+  /* ---------- candidates ---------- */
+  .leaders{background:var(--paper-deep);border-top:1px solid var(--paper-edge);}
+  .cands{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px;}
+  @media (max-width:720px){.cands{grid-template-columns:1fr;}}
+  .cand{background:var(--paper-lit);border-top:8px solid var(--navy);padding:26px 24px;box-shadow:var(--shadow);}
+  .cand .seat{
+    font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:600;color:var(--red);display:block;margin-bottom:10px;
+  }
+  .cand h3{
+    font-family:'Anton',Impact,sans-serif;font-weight:400;text-transform:uppercase;
+    font-size:1.75rem;line-height:1;margin:0 0 10px;color:var(--navy);
+  }
+  .cand p{margin:0 0 10px;font-size:1rem;}
+  .cand p:last-child{margin-bottom:0;}
+  .cand a{color:var(--red);font-weight:700;text-decoration:none;border-bottom:2px solid rgba(185,51,39,.35);}
+  .cand a:hover{border-bottom-color:var(--red);}
+
+  /* vote badges on the measure cards */
+  .rec{
+    display:inline-block;font-family:'Oswald',sans-serif;font-weight:700;
+    text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;
+    padding:.3em .7em;margin-bottom:12px;
+  }
+  .rec--yes{background:#1F5130;color:#F2FBF4;}
+  .rec--no{background:var(--red-deep);color:#FFF1EC;}
+
   /* ---------- CTA ---------- */
   .cta{
     text-align:center;position:relative;overflow:hidden;
@@ -394,220 +455,245 @@
       <p>Colorado affordable again.</p>
     </div>
 
-    <p class="hero__sub">Everything in Broomfield costs more than it did in 2024. Some of that is already settled. The rest is on the ballot that shows up in your mailbox in October.</p>
+    <p class="hero__sub">Everything costs more than it did in 2024. Some of that was decided at the Capitol without a vote, and some of it is on the ballot already sitting in your mailbox.</p>
   </div>
 </header>
 
 <!-- ===================== PART ONE ===================== -->
-<section id="bills">
+<!-- ===================== VOTER GUIDE ===================== -->
+<section class="guide" id="voter-guide">
+  <div class="wrap guide__inner">
+    <div>
+      <span class="kicker">Broomfield County Republicans</span>
+      <h2 class="rough">The 2026<br>Voter Guide</h2>
+      <p class="guide__sub">Every Republican on your Broomfield ballot, and how we recommend voting on all fourteen statewide measures. One page. Print it, take it to the kitchen table, mark your ballot.</p>
+      <div class="btnrow">
+        <a class="btn btn--solid" href="voter-guide">Open the voter guide</a>
+        <a class="btn btn--ghost" href="assets/voter-guide-2026.pdf">Download the PDF</a>
+      </div>
+      <p class="guide__when">Ballots mailed October 2 &nbsp;&middot;&nbsp; Due by 7 p.m. November 3</p>
+    </div>
+    <div>
+      <a href="voter-guide"><img class="guide__shot" src="assets/img/voter-guide-2026-preview.jpg" alt="The Broomfield County Republicans 2026 voter guide" loading="lazy" /></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PART ONE: COSTS ===================== -->
+<section id="costs">
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">Part one</span>
-      <h2 class="rough">Where your bills have been going</h2>
+      <h2 class="rough">Colorado did not get expensive by accident</h2>
     </div>
-    <p class="lede">Some of this came from Broomfield. Some of it came from the state. All of it arrives at the same address.</p>
+    <p class="lede">Some of what you pay was decided at the Capitol, on purpose, and in a way that never required your permission.</p>
 
-    <p class="subhead">In Broomfield</p>
+    <div class="quote">
+      <blockquote>More than a third of Colorado households now spend at least 30 percent of their income on housing.</blockquote>
+      <cite>35.1 percent here against 33.0 percent nationally. A decade ago Colorado was better than the national average, not worse. Census American Community Survey, 2024.</cite>
+    </div>
+
+    <p class="subhead">What the legislature added to your bills</p>
 
     <div class="stack">
       <div class="item">
-        <div class="item__year">2025<span>In effect</span></div>
+        <div class="item__year sm">Every<br>gallon<span>Rising</span></div>
         <div>
-          <h3>An average bill went from $80.05 to $119.90</h3>
-          <p>Ordinances 2253 and 2255, adopted October 22, 2024, took effect January 1, 2025. Those are the city&rsquo;s own figures for an average single family bill, water, sewer and stormwater together. An increase of $39.85 a month.</p>
-          <p>Of that, $11 was a stormwater charge that had never been billed before. The water base fee went from $16.93 to $36.91.</p>
-          <span class="src">City of Broomfield utility rate FAQ, 2025 estimated impact per average household.</span>
+          <h3>The road usage fee</h3>
+          <p>A new per gallon fee stacked on top of the 22 cent state gas tax. It started at 2 cents in April 2023 and is <strong>6 cents today</strong>. It climbs to 7 cents next year and 8 cents in 2028, then rises with inflation after that.</p>
+          <span class="src">Senate Bill 21-260; C.R.S. 43-4-217. Passed 20 to 15 in the Senate, 41 to 24 in the House.</span>
         </div>
       </div>
 
       <div class="item">
-        <div class="item__year">2026<span>In effect</span></div>
+        <div class="item__year sm">Every<br>delivery<span>Rising</span></div>
         <div>
-          <h3>Year two, up 15 percent</h3>
-          <p>Ordinance 2286, adopted October 14, 2025, took effect January 1, 2026. The city&rsquo;s outlook puts the average bill at $138.05.</p>
-          <span class="src">City of Broomfield, Ordinance 2286; utility rate FAQ four year outlook.</span>
+          <h3>The retail delivery fee</h3>
+          <p>Charged once on any delivery to your door that contains something taxable, no matter how small the order. It began at 27 cents in 2022 and rose to <strong>31 cents on July 1</strong>. It is indexed, so it moves every July without another vote.</p>
+          <span class="src">Senate Bill 21-260; Colorado Department of Revenue rate schedule. Sellers under $500,000 in prior year sales are exempt.</span>
         </div>
       </div>
 
       <div class="item">
-        <div class="item__year">2028<span>Projected</span></div>
+        <div class="item__year sm">Every<br>bag<span>In effect</span></div>
         <div>
-          <h3>The plan ends at $158.22</h3>
-          <p>The city publishes a four year outlook: $119.90, then $138.05, then $148.11, then $158.22. Seven percent in 2027 and again in 2028. Staff recommended staying on that plan at the July 21, 2026 study session.</p>
-          <p>Read the whole line and an average monthly bill roughly doubles from where it stood in 2024. The later years are projections, not adopted rates.</p>
-          <span class="src">City of Broomfield utility rate FAQ, four year outlook; study session July 21, 2026.</span>
+          <h3>The carryout bag fee</h3>
+          <p><strong>10 cents per paper bag</strong> since January 2024, with plastic carryout bags banned outright. The store keeps 40 percent and the local government takes 60. Small on its own, which is rather the point.</p>
+          <span class="src">House Bill 21-1162. Waived for SNAP and WIC participants.</span>
         </div>
       </div>
 
       <div class="item">
-        <div class="item__year sm">In<br>fairness<span>Context</span></div>
+        <div class="item__year sm">Every<br>EV<span>Rising</span></div>
         <div>
-          <h3>What the city says back</h3>
-          <p>Broomfield&rsquo;s average utility bill was the lowest among comparable neighboring communities before any of this, and the city expects it will still not be the highest afterward. Utilities here are enterprise funds, which by law cannot be paid for out of tax revenue.</p>
-          <p>The city also objects to the shorthand, writing that calling it a 50 percent increase &ldquo;generally is misleading&rdquo; because it combines three utilities. That is why the dollars are used above instead. If the bill is a hardship, Broomfield runs a Utility Rate Assistance Fund.</p>
-          <span class="src">City of Broomfield utility rate FAQ.</span>
+          <h3>Electric vehicle fees</h3>
+          <p>A registration fee plus a road usage equalization fee, <strong>$76.05 a year now</strong>, scheduled to reach $167.70 by 2032.</p>
+          <span class="src">Senate Bill 21-260; Colorado Department of Transportation, presentation to the Transportation Legislation Review Committee, September 2025.</span>
         </div>
       </div>
     </div>
 
-    <p class="subhead">From the state</p>
+    <p class="subhead">The part worth understanding</p>
 
     <div class="stack">
       <div class="item">
-        <div class="item__year">2024<span>In effect</span></div>
+        <div class="item__year sm">No<br>vote<span>By design</span></div>
         <div>
-          <h3>Your gas bill went up</h3>
-          <p>Xcel asked for about $171 million. State regulators approved $130.76 million, about $4.57 a month on an average residential bill, roughly 7.7 percent. Rates were effective November 5, 2024, though the increase was deferred and did not reach bills until February 2025, when the Winter Storm Uri charge came off.</p>
-          <span class="src">Colorado Public Utilities Commission, Proceeding 24AL-0049G, deliberations concluded October 25, 2024.</span>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item__year">2026<span>In effect</span></div>
-        <div>
-          <h3>Your electric bill went up last month</h3>
-          <p>Xcel asked for about $356 million. A settlement would have made it $225 million. The commission rejected that and approved roughly $157 million, a 4.77 percent residential increase, about $5.00 a month. New rates took effect August 29.</p>
-          <p>Worth saying plainly: regulators cut the request by more than half. The bill still went up, from about $104.91 to $109.92 for an average household.</p>
-          <p>One commissioner put the longer worry on the record, noting that Xcel had tripled its capital spending since 2021 while electricity sales declined: &ldquo;if capital spending and rates continue to grow at levels considerably faster than inflation, electricity may simply become unaffordable for many customers.&rdquo;</p>
-          <span class="src">Colorado Public Utilities Commission, Proceeding 25AL-0494E, decision August 20, 2026.</span>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item__year">2026<span>In effect</span></div>
-        <div>
-          <h3>The delivery fee rose again</h3>
-          <p>Colorado charges a flat fee on deliveries by motor vehicle that include at least one item subject to sales tax. It was 27 cents when it started in 2022 and is 31 cents as of July 1, 2026. It has moved both directions in between, but the trend is up.</p>
-          <p>It is charged once per delivery no matter how many items are in the box. The legislature created it in 2021 and wrote in an annual inflation adjustment, so the rate now moves every July without a further vote. Businesses under $500,000 in prior year sales are exempt, and a retailer may absorb the fee rather than pass it on.</p>
-          <span class="src">Colorado Department of Revenue, retail delivery fee rate schedule and guidance; SB21-260.</span>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item__year sm">Every<br>paycheck<span>Standing</span></div>
-        <div>
-          <h3>The paid leave deduction</h3>
-          <p>Not an increase, a permanent line. The state paid family leave program takes 0.44 percent of your wages, up to $184,500 in earnings. On a $65,000 salary that is about $286 a year, every year, unless your employer chooses to cover it. Employers with ten or more workers pay a matching 0.44 percent; smaller employers are exempt from the match.</p>
-          <p>Colorado voters created the program in 2020, and it pays wage replacement to workers who take leave for a new child or a serious illness. The rate is recalculated by the state each year under a statutory formula and was trimmed from 0.90 to 0.88 percent for 2026.</p>
-          <span class="src">Colorado Family and Medical Leave Insurance Division, 2026 premium rate and small business rules.</span>
+          <h3>A tax needs your permission. A fee does not.</h3>
+          <p>None of the charges above went to the ballot. Each was written as an <em>enterprise</em> fee, and under the Taxpayer&rsquo;s Bill of Rights an enterprise sits outside the limits and outside the vote that any new tax would require.</p>
+          <p>This is legal. The Court of Appeals upheld the structure in May 2025. Legal is not the same as accountable, and the reason to route money this way is that the alternative is asking.</p>
+          <p>Being fair about it: voters closed part of the gap themselves in 2020, when Proposition 117 began requiring a vote on any new enterprise expected to collect more than $100 million in five years. The ten enterprises created since then come to roughly $98 million between them. The door is narrower than it was. It is not shut.</p>
+          <span class="src">Colo. Const. art. X, sec. 20; C.R.S. 24-77-108; Americans for Prosperity v. State, 2025 COA 46.</span>
         </div>
       </div>
     </div>
 
     <div class="quote">
-      <blockquote>Not one of these was a big number on its own.</blockquote>
-      <cite>They arrive at the same address, in the same month, out of the same paycheck. That is what makes them add up.</cite>
+      <blockquote>Last year more people left Colorado for other states than moved here from them.</blockquote>
+      <cite>A net loss of 12,100 residents to other states in the year ending June 30, 2025. It is the first time Colorado has gone negative since 2004. Colorado State Demography Office, January 2026.</cite>
     </div>
   </div>
 </section>
 
-<!-- ===================== PART TWO ===================== -->
-<section class="ballot" id="ballot">
+<!-- ===================== PART TWO: LEADERS ===================== -->
+<section class="leaders" id="leaders">
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">Part two</span>
-      <h2 class="rough">What is on your ballot in November</h2>
+      <h2 class="rough">Nobody voted for either of them</h2>
     </div>
-    <p class="lede">One Broomfield question and a statewide slate. Not every one of these lands on a household bill, and we say so where it does not. All of them are open until the envelopes come back.</p>
+    <p class="lede">Both of the seats that represent Broomfield in the state legislature are currently held by people who were never elected to them. Not by you, not by anyone.</p>
 
-    <p class="subhead">Broomfield questions</p>
+    <div class="stack">
+      <div class="item">
+        <div class="item__year sm">House<br>33<span>Appointed</span></div>
+        <div>
+          <h3>Picked by a vacancy committee in January</h3>
+          <p>Kenny Nguyen was selected on January 12, 2026 by a Democratic vacancy committee of roughly three dozen people, and seated two days later. He had never served in the legislature.</p>
+          <span class="src">Colorado Politics, January 13, 2026.</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item__year sm">Senate<br>25<span>Appointed</span></div>
+        <div>
+          <h3>Appointed by the governor in December</h3>
+          <p>After Senator Faith Winter died in November 2025, the district vacancy committee chose William Lindstedt but missed the deadline to certify him. Governor Polis then made the appointment himself on December 30, 2025, naming the same person the committee had picked.</p>
+          <p>It was only the second time a Colorado governor has filled a legislative vacancy this way.</p>
+          <span class="src">Office of the Governor, December 30, 2025; Colorado Politics, December 31, 2025.</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="lede" style="margin-top:34px"><strong>November 3 is the first time a voter gets a say on either seat.</strong> Two Broomfield residents are on the ballot.</p>
+
+    <div class="cands">
+      <article class="cand">
+        <span class="seat">Colorado House District 33</span>
+        <h3>Nate Jorgensen</h3>
+        <p>Running on economic freedom for working families, local control instead of mandates written in Denver, and backing law enforcement and parents on public safety.</p>
+        <p><a href="redbook">More on his campaign &rarr;</a></p>
+      </article>
+
+      <article class="cand">
+        <span class="seat">Colorado Senate District 25</span>
+        <h3>Paul Kohlhoff</h3>
+        <p>Thirty four years at the U.S. Department of Defense in mapping, logistics and contractor operations. Running on parental rights, crime and public safety, election integrity and government accountability.</p>
+        <p><a href="redbook">More on his campaign &rarr;</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PART THREE: BALLOT ===================== -->
+<section class="ballot" id="ballot">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Part three</span>
+      <h2 class="rough">The measures that reach your wallet</h2>
+    </div>
+    <p class="lede">Fourteen statewide measures are on the ballot this year, plus a regional rail question. These are the ones about money. Our recommendation is on each card, and the reasoning for all of them is in the voter guide.</p>
 
     <div class="qgrid qgrid--two">
       <article class="q">
-        <span class="tag">Your utility bill</span>
-        <h3>The Xcel franchise question</h3>
-        <p>A franchise agreement running from January 1, 2028 through December 31, 2048. Twenty years. The 3 percent franchise fee does not change, and Xcel continues contributing 1 percent of electric gross revenue toward the underground conversion program.</p>
-        <p>Xcel collects the franchise fee from customers and remits all of it to the city, so it is a pass-through. It appears as a line on Xcel bills, gas as well as electric. Households served by United Power rather than Xcel would not see this particular fee.</p>
-        <p class="flag">Referred on second reading July 7, 2026. The fee is not going up. What is on the table is locking the arrangement in until 2048.</p>
-      </article>
-
-      <article class="q">
-        <span class="tag">Permanent by design</span>
-        <h3>The lodging tax question</h3>
-        <p>Resolution 2026-105 refers a lodging tax increase from 1.6 percent to 6 percent, dedicated to the Broomfield Housing Alliance. The tax applies to hotels, motels and short term rentals. It raises about $900,000 a year now and would raise about $3.3 million. The stated reason for the timing is that inclusionary housing revenue is projected to reach zero at the end of 2027.</p>
-        <p>Two things to be straight about. The 1.6 percent rate has stood since voters approved it in 1997, and even at 6 percent Broomfield would sit below Thornton, Westminster, Boulder, Aurora and Wheat Ridge, which run 7 to 10 percent. And visitors pay most of a lodging tax, though residents booking a room here pay it too.</p>
-        <p>The reason to read this one closely is that it is built to be permanent. Asked about a sunset, the City and County Manager answered on the record: <strong>&ldquo;You can&rsquo;t sunset a tax if you have already taken bonds out on those funds.&rdquo;</strong> She explained that lenders require a sustainable revenue stream over 25 to 30 years, which is what makes a sunset difficult.</p>
-        <p class="flag">That is staff being candid, not an accusation, and it is the whole point. One election, and it stays. Referred to the November 3 ballot on August 11, 2026.</p>
-      </article>
-    </div>
-
-    <p class="fine" style="margin-top:22px">Broomfield expects three local questions this November. The third is a district attorney term limit question, which extends the maximum from eight years to twelve. It carries no cost to a household, so it is not broken out here. Broomfield publishes its own local voter guide rather than relying on the state Blue Book, and it will carry all three.</p>
-
-    <p class="subhead">Statewide measures</p>
-
-    <div class="qgrid qgrid--two">
-      <article class="q">
+        <span class="rec rec--no">Vote No</span>
         <span class="tag">The income tax</span>
-        <h3>Initiative 195</h3>
-        <p>Would end Colorado&rsquo;s single flat income tax rate and replace it with six brackets. Rates below $100,000 come down. The top rate reaches 8.40 percent on income over $1 million.</p>
-        <p>Start with the part that cuts against us, because you will find it anyway. State analysts put the break-even near $510,000 of income. Below that, most filers would owe modestly less on next year&rsquo;s return.</p>
-        <p>The case against it is not next year&rsquo;s return. It is that the flat rate is the protection. Colorado&rsquo;s constitution requires one rate for everyone, so a rate increase has to be argued in front of every voter at once. Brackets end that. A bracket threshold is a number a future legislature can lower. A constitutional provision is not.</p>
-        <p>The revenue is also built on a narrow and highly mobile group of filers. Estimates run from about $2 billion a year to the state&rsquo;s own maximum figure of $2.7 billion, which is a wide spread for a budget to depend on, and the people it depends on are the ones most able to file from somewhere else.</p>
-        <p class="flag">Signatures went in on August 3, the fewest of any measure headed for this ballot, and because it amends the constitution it also needs 2 percent of registered voters in every one of the 35 senate districts. Certification was still pending when this page was written. Check whether it made your ballot.</p>
+        <h3>Amendment 87</h3>
+        <p>Ends Colorado&rsquo;s single flat 4.4 percent income tax and replaces it with six brackets running from 3.7 to 8.4 percent.</p>
+        <p>Start with the part that cuts against us, because you will find it anyway. State analysts put the break even near $510,000 of income. Below that, most filers would owe modestly less next year.</p>
+        <p>The case against it is not next year&rsquo;s return. The flat rate is the protection. One rate for everyone means a rate increase has to be argued in front of every voter at once. Brackets end that, and a bracket threshold is a number a future legislature can lower. A constitutional provision is not.</p>
+        <p class="flag">The official ballot title puts the increase at $2.7 billion a year, raised from a small and highly mobile group of filers.</p>
       </article>
 
       <article class="q">
+        <span class="rec rec--yes">Vote Yes</span>
         <span class="tag">The other half of that fight</span>
-        <h3>Initiative 232</h3>
-        <p>The answer to 195 on the same ballot. Would lock Colorado&rsquo;s income tax rate at 4.40 percent, where it already sits, starting in 2027.</p>
+        <h3>Proposition 136</h3>
+        <p>The answer to Amendment 87 on the same ballot. Locks Colorado&rsquo;s income tax rate at 4.40 percent, where it already sits, starting in 2027.</p>
         <p>State analysts scored its own effect on revenue at zero, and that is honest. It changes nothing on any return by itself. What it changes is how much room a future legislature has to move the rate.</p>
-        <p class="flag">Certified August 20 with 184,454 signatures. Passes on a simple majority. If both this and 195 pass, the one with more yes votes controls wherever the two conflict. Exactly how the rest would fit together is genuinely disputed.</p>
+        <p class="flag">If both this and Amendment 87 pass, the one with more yes votes controls wherever the two conflict.</p>
       </article>
 
       <article class="q">
+        <span class="rec rec--no">Vote No</span>
         <span class="tag">Your TABOR refund</span>
-        <h3>Two refund questions</h3>
-        <p>Separate measures, same mechanism. Neither raises a tax rate. Both let the state keep money it would otherwise send back to taxpayers.</p>
-        <h4>Initiative 308</h4>
-        <p>Exempts the sales tax already collected on sporting goods from TABOR, roughly $175 to $180 million a year, and routes it to a new conservation and wildfire fund. Legislative analysts say it reduces refunds by about the same amount.</p>
-        <h4>Proposition NN</h4>
-        <p>Senate Bill 26-135, referred by the legislature on a party line vote. Lets the state keep revenue above the TABOR cap for K-12 schools and children&rsquo;s programs.</p>
-        <p>This is the larger of the two by far. The final fiscal note projects refunds of $329.9 million in 2026-27 and $521.0 million in 2027-28 under current law, and expects this measure to eliminate them.</p>
-        <p class="flag">Neither does anything in a year the state collects under the cap. Colorado voters have turned down every attempt to lift that cap in the last decade, most recently Proposition HH in 2023.</p>
+        <h3>Proposition NN</h3>
+        <p>Lets the state keep revenue above the TABOR cap for K-12 schools and children&rsquo;s programs instead of refunding it.</p>
+        <p>The final fiscal note projects refunds of $329.9 million in 2026-27 and $521.0 million in 2027-28 under current law, and expects this measure to eliminate them.</p>
+        <p class="flag">Referred by the legislature on a party line vote. No Republican voted yes.</p>
       </article>
 
       <article class="q">
-        <span class="tag">What you pay to drive</span>
-        <h3>Initiative 175</h3>
-        <p>Would require the vehicle and fuel taxes you already pay to go to roads, bridges and the State Patrol rather than into the general pot.</p>
-        <p>A companion law signed in June would temporarily cut fuel taxes and registration fees from January 2027 through June 2030, but only if this measure passes.</p>
-        <p class="flag">Certified June 23. A redirection of money already collected, not a new tax. Whatever it moves to roads has to come out of something else.</p>
+        <span class="rec rec--no">Vote No</span>
+        <span class="tag">Your TABOR refund</span>
+        <h3>Proposition 137</h3>
+        <p>Takes the sales tax already collected on sporting goods out from under TABOR, roughly $175 to $180 million a year, and routes it to a new conservation and wildfire fund.</p>
+        <p>It raises no rate. Legislative analysts say it reduces refunds by about the same amount it keeps.</p>
+        <p class="flag">Same mechanism as Proposition NN, smaller number.</p>
       </article>
 
       <article class="q">
+        <span class="rec rec--no">Vote No</span>
+        <span class="tag">A new sales tax</span>
+        <h3>Ballot Issue 7A</h3>
+        <p>Broomfield sits inside the Front Range Passenger Rail District, so this is on your ballot. It creates a <strong>0.333 percent sales and use tax</strong>, about 33 cents on every $100 you spend, to build and run passenger rail from Pueblo to Fort Collins.</p>
+        <p>The certified title puts it at <strong>$295 million a year</strong> once fully collected, plus $580 million in borrowing with a repayment cost of $785 million. Groceries, gasoline, residential gas and electricity and prescriptions are exempt.</p>
+        <p class="flag">There is no end date in the question. It is the single largest tax increase on this ballot.</p>
+      </article>
+
+      <article class="q">
+        <span class="rec rec--yes">Vote Yes</span>
         <span class="tag">Heating and cooking</span>
-        <h3>Initiative 177</h3>
-        <p>A constitutional amendment declaring a right to buy natural gas for home heating and cooking, and a right for utilities to sell it.</p>
-        <p>It sets no rate and collects nothing, so it will not lower a bill. Its effect would be to limit how far the state or a city can go in restricting gas hookups and appliances.</p>
-        <p class="flag">Certified in August. As a constitutional amendment it needs 55 percent to pass, not a simple majority.</p>
+        <h3>Amendment 82</h3>
+        <p>Writes into the constitution a right to buy natural gas for home heating and cooking, and a right for utilities to sell it.</p>
+        <p>It sets no rate and collects nothing, so it will not lower a bill by itself. What it does is limit how far the state or a city can go in restricting gas hookups and appliances.</p>
+        <p class="flag">As a constitutional amendment it needs 55 percent to pass, not a simple majority.</p>
       </article>
     </div>
 
-    <p class="fine">Citizen initiatives are listed here by initiative number, which is how the state tracks them until certification. Colorado assigns the Amendment letters and Proposition numbers in early September, so those will read differently on your ballot. Measures referred by the legislature already have theirs, which is why Proposition NN appears by name. Broomfield question numbers and certified titles are not final until the county sets the ballot. Read the title in front of you, and check any figure on this page against the record yourself.</p>
+    <p class="fine">Initiative 175, the road funding measure, was withdrawn by its own proponents on September 1 and is not on any ballot. The Secretary of State certified the final ballot on September 4, which is when these measures received the numbers above. Nine other statewide measures are on your ballot that do not turn on household costs, and the voter guide covers every one of them.</p>
   </div>
 </section>
 
 <!-- ===================== CTA ===================== -->
 <section class="cta" id="return-your-ballot">
   <div class="wrap">
-    <h2 class="rough">None of it is decided yet</h2>
-    <p><span class="brush brush--navy rough">Whoever mails the ballot back decides it.</span></p>
+    <h2 class="rough">Your ballot is already here</h2>
+    <p><span class="brush brush--navy rough">Whoever mails it back decides it.</span></p>
 
     <ol class="steps">
-      <li>Your ballot arrives in the mail in October. Every active registered voter in Colorado gets one.</li>
-      <li>Fill it out at the kitchen table, with the ballot questions in front of you.</li>
+      <li>Broomfield mailed ballots on October 2. If yours has not turned up, call the Elections Division at 303-464-5857.</li>
+      <li>Fill it out at the kitchen table with the voter guide next to you.</li>
       <li>Sign the envelope. An unsigned envelope does not count.</li>
-      <li>Drop it in any Broomfield drop box, or put it back in the mail. Ten minutes.</li>
+      <li>Mailing it back? Do that by October 26. After that use one of the seven drop boxes, open around the clock until 7 p.m. on November 3.</li>
     </ol>
 
     <div class="btnrow">
-      <a class="btn btn--solid" href="https://www.GoVoteColorado.gov" target="_blank" rel="noopener">Check your registration</a>
+      <a class="btn btn--solid" href="voter-guide">Open the voter guide</a>
       <a class="btn btn--ghost" href="https://colorado.ballottrax.net" target="_blank" rel="noopener">Track your ballot</a>
     </div>
 
-    <p class="cta__note">Registration and ballot tracking are run by the state, not by us. Both links go straight there.</p>
-
-    <p class="cta__more">The candidates and ballot questions from the mailer are all in the 2026 guide: <a href="redbook.html">Broomfield 2026 Election Guide &rarr;</a></p>
+    <p class="cta__note">Registration and ballot tracking are run by the state, not by us. Register or check your status at GoVoteColorado.gov through October 26, or in person at a voting center through 7 p.m. on Election Day.</p>
   </div>
 </section>
 
@@ -615,8 +701,8 @@
 <footer class="foot">
   <div class="wrap">
     <p class="disc">Paid for by the Broomfield County Republicans.</p>
-    <p>Political donations are not tax exempt. Every figure on this page is sourced to a public record: City of Broomfield ordinances and study session materials, Colorado Public Utilities Commission proceedings, the Department of Revenue, the FAMLI Division, and Legislative Council Staff fiscal notes. Each item names its source. Find something wrong and we will fix it: <a href="mailto:Chairman@BroomfieldRepublicans.org">Chairman@BroomfieldRepublicans.org</a></p>
-    <p><a href="index.html">BroomfieldRepublicans.org</a> &nbsp;&middot;&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+    <p>Political donations are not tax exempt. Every figure on this page is sourced to a public record: Colorado session laws and statute, Legislative Council Staff fiscal notes, the Department of Revenue, the Department of Transportation, the Secretary of State, the Colorado State Demography Office and the Census Bureau. Each item names its source. Find something wrong and we will fix it: <a href="mailto:Chairman@BroomfieldRepublicans.org">Chairman@BroomfieldRepublicans.org</a></p>
+    <p><a href="/">BroomfieldRepublicans.org</a> &nbsp;&middot;&nbsp; <a href="privacy">Privacy Policy</a></p>
   </div>
 </footer>
 
