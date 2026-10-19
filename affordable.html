@@ -379,6 +379,7 @@
     html{scroll-behavior:auto;}
   }
 </style>
+<script src="/assets/js/analytics.js?v=20261019" defer></script>
 </head>
 <body>
 
@@ -468,13 +469,13 @@
       <h2 class="rough">The 2026<br>Voter Guide</h2>
       <p class="guide__sub">Every Republican on your Broomfield ballot, and how we recommend voting on all fourteen statewide measures. One page. Print it, take it to the kitchen table, mark your ballot.</p>
       <div class="btnrow">
-        <a class="btn btn--solid" href="voter-guide">Open the voter guide</a>
-        <a class="btn btn--ghost" href="assets/voter-guide-2026.pdf">Download the PDF</a>
+        <a data-track="affordable_guide_open_top" class="btn btn--solid" href="voter-guide">Open the voter guide</a>
+        <a data-track="affordable_guide_pdf" class="btn btn--ghost" href="assets/voter-guide-2026.pdf">Download the PDF</a>
       </div>
       <p class="guide__when">Ballots mailed October 2 &nbsp;&middot;&nbsp; Due by 7 p.m. November 3</p>
     </div>
     <div>
-      <a href="voter-guide"><img class="guide__shot" src="assets/img/voter-guide-2026-preview.jpg" alt="The Broomfield County Republicans 2026 voter guide" loading="lazy" /></a>
+      <a data-track="affordable_guide_image" href="voter-guide"><img class="guide__shot" src="assets/img/voter-guide-2026-preview.jpg" alt="The Broomfield County Republicans 2026 voter guide" loading="lazy" /></a>
     </div>
   </div>
 </section>
@@ -592,14 +593,14 @@
         <span class="seat">Colorado House District 33</span>
         <h3>Nate Jorgensen</h3>
         <p>Running on economic freedom for working families, local control instead of mandates written in Denver, and backing law enforcement and parents on public safety.</p>
-        <p><a href="redbook">More on his campaign &rarr;</a></p>
+        <p><a data-track="affordable_more_nate" href="redbook">More on his campaign &rarr;</a></p>
       </article>
 
       <article class="cand">
         <span class="seat">Colorado Senate District 25</span>
         <h3>Paul Kohlhoff</h3>
         <p>Thirty four years at the U.S. Department of Defense in mapping, logistics and contractor operations. Running on parental rights, crime and public safety, election integrity and government accountability.</p>
-        <p><a href="redbook">More on his campaign &rarr;</a></p>
+        <p><a data-track="affordable_more_paul" href="redbook">More on his campaign &rarr;</a></p>
       </article>
     </div>
   </div>
@@ -689,8 +690,8 @@
     </ol>
 
     <div class="btnrow">
-      <a class="btn btn--solid" href="voter-guide">Open the voter guide</a>
-      <a class="btn btn--ghost" href="https://colorado.ballottrax.net" target="_blank" rel="noopener">Track your ballot</a>
+      <a data-track="affordable_guide_open_bottom" class="btn btn--solid" href="voter-guide">Open the voter guide</a>
+      <a data-track="affordable_ballottrax" class="btn btn--ghost" href="https://colorado.ballottrax.net" target="_blank" rel="noopener">Track your ballot</a>
     </div>
 
     <p class="cta__note">Registration and ballot tracking are run by the state, not by us. Register or check your status at GoVoteColorado.gov through October 26, or in person at a voting center through 7 p.m. on Election Day.</p>
