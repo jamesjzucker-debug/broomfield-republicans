@@ -18,6 +18,52 @@
 
   var BASE = "https://forms.bcrserver.org";
 
+  // Cloudflare Turnstile (bot check). Public site key, safe to ship.
+  // The matching secret lives only in n8n, which rejects posts without a valid token.
+  var TURNSTILE_SITEKEY = "0x4AAAAAAFgwk4pbzhF6RBnE";
+  var turnstileQueue = [];
+  var turnstileLoading = false;
+
+  function whenTurnstile(cb) {
+    if (window.turnstile && window.turnstile.render) { cb(); return; }
+    turnstileQueue.push(cb);
+    if (turnstileLoading) return;
+    turnstileLoading = true;
+    window.bcrTurnstileReady = function () {
+      var q = turnstileQueue; turnstileQueue = [];
+      for (var i = 0; i < q.length; i++) q[i]();
+    };
+    var s = document.createElement("script");
+    s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=bcrTurnstileReady";
+    s.async = true;
+    s.defer = true;
+    document.head.appendChild(s);
+  }
+
+  function addTurnstile(form) {
+    var box = document.createElement("div");
+    box.className = "formlite-turnstile";
+    box.style.cssText = "margin:12px 0;";
+    var btn = form.querySelector('[type="submit"], button:not([type])');
+    if (btn && btn.parentNode) {
+      btn.parentNode.insertBefore(box, btn);
+    } else {
+      form.appendChild(box);
+    }
+    whenTurnstile(function () {
+      form._tsWidget = window.turnstile.render(box, {
+        sitekey: TURNSTILE_SITEKEY,
+        action: form.getAttribute("data-formlite") || "form"
+      });
+    });
+  }
+
+  function resetTurnstile(form) {
+    if (window.turnstile && form._tsWidget != null) {
+      try { window.turnstile.reset(form._tsWidget); } catch (e) {}
+    }
+  }
+
   // page KEY  ->  Formlite form ID (paste each ID as its form is created)
   var FORMS = {
     "contact": "d4abd999-946b-42be-bbba-dbc75b09185e",
@@ -63,18 +109,20 @@
     }
   }
 
-  function showError(form, btn, originalLabel) {
+  function showError(form, btn, originalLabel, text) {
+    resetTurnstile(form);
     if (btn) {
       btn.disabled = false;
       if (originalLabel != null) btn.innerHTML = originalLabel;
     }
-    if (form.querySelector(".formlite-error")) return;
+    var old = form.querySelector(".formlite-error");
+    if (old) old.parentNode.removeChild(old);
     var err = document.createElement("p");
     err.className = "formlite-error";
     err.setAttribute("role", "alert");
     err.style.cssText =
       "margin:12px 0 0;color:#a11020;font-weight:600;font-size:.9rem;";
-    err.textContent =
+    err.textContent = text ||
       "Sorry, something went wrong sending your message. Please try again, " +
       "or email chairman@broomfieldrepublicans.org.";
     form.appendChild(err);
@@ -90,9 +138,16 @@
     form.setAttribute("action", url);
     form.setAttribute("method", "POST");
     addHoneypot(form);
+    addTurnstile(form);
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      var tok = form.querySelector('input[name="cf-turnstile-response"]');
+      if (!tok || !tok.value) {
+        showError(form, null, null,
+          "Please finish the quick security check above the button, then press send again.");
+        return;
+      }
       var btn = form.querySelector('[type="submit"], button:not([type])');
       var originalLabel = btn ? btn.innerHTML : null;
       if (btn) {
