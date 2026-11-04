@@ -27,7 +27,7 @@
   var END = Date.parse('2026-11-03T19:00:00-07:00');
   if (Date.now() > END) return;
   var page = location.pathname.split('/').pop().replace(/\.html$/, '');
-  if (['voter-guide', 'privacy'].indexOf(page) !== -1) return;
+  if (['voter-guide', 'privacy', 'results'].indexOf(page) !== -1) return;
 
   var KEY = 'bcrVoterGuide2026Seen';
   try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
@@ -109,4 +109,23 @@
   }
 
   setTimeout(open, 1200);
+})();
+
+// Election night handoff.
+// At 7 PM Mountain on Nov 3 2026 (polls close), every link to the voter guide points to the live results page
+// and the nav label "2026 Election Guide" becomes "Election Results". redbook.html and voter-guide.html also
+// redirect to /results on their own. Remove this block after the election.
+(function () {
+  var CLOSE = Date.parse('2026-11-03T19:00:00-07:00');
+  function swap() {
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var h = a.getAttribute('href');
+      if (!/^(\/?|https:\/\/broomfieldrepublicans\.org\/)(redbook|voter-guide|2026-election)(\.html)?([#?].*)?$/.test(h)) return;
+      a.setAttribute('href', 'results');
+      if (a.textContent.trim() === '2026 Election Guide') a.textContent = 'Election Results';
+    });
+  }
+  var wait = CLOSE - Date.now();
+  if (wait <= 0) swap();
+  else if (wait < 6 * 3600 * 1000) setTimeout(swap, wait + 500);
 })();

@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>
+  /* Election night: after polls close (7 PM MT, Nov 3 2026) this guide hands off to the live results page.
+     Add ?guide=1 to the URL to view the guide anyway. Remove this block after the election. */
+  (function(){ if (Date.now() >= Date.parse('2026-11-03T19:00:00-07:00') && !/[?&]guide=1/.test(location.search)) location.replace('/results'); })();
+</script>
 <title>2026 Voter Guide &middot; Broomfield County Republicans</title>
 <meta name="description" content="The Broomfield County Republicans 2026 voter guide. Our Republican nominees and our recommendations on every statewide and Broomfield ballot measure for the November 3, 2026 election." />
 <link rel="canonical" href="https://broomfieldrepublicans.org/voter-guide" />
