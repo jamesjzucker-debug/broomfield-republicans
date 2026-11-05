@@ -27,6 +27,11 @@
 .er-scope { display: inline-flex; background: rgba(255,255,255,.08); border-radius: 999px; padding: 4px; }
 .er-scope button { border: 0; background: transparent; color: #fff; font: 600 .88rem/1 'Inter', system-ui, sans-serif; padding: 10px 14px; border-radius: 999px; cursor: pointer; }
 .er-scope button.is-on { background: #fff; color: var(--navy); }
+.er-turnout { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-top: 14px; padding: 14px 18px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+.er-turnout__label { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); }
+.er-turnout__big { font-size: 1.6rem; font-weight: 700; color: var(--navy); line-height: 1; }
+.er-turnout__text { font-size: .92rem; color: var(--ink-soft); flex: 1 1 260px; }
+.er-turnout__text b { color: var(--ink); }
 .er-note { color: var(--ink-soft); font-size: .95rem; margin: 18px 0; max-width: 900px; }
 .er-official { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; }
 .er-btn-dark { color: var(--navy) !important; border-color: var(--navy) !important; }
@@ -167,6 +172,8 @@
         <button type="button" data-scope="county" aria-pressed="false">Broomfield votes only</button>
       </div>
     </div>
+
+    <div class="er-turnout" id="er-turnout" hidden></div>
 
     <p class="er-note">All numbers are <strong>unofficial</strong> election night counts from the Colorado Secretary of State and the Broomfield Elections Division. Colorado counts mail ballots for days after Election Day, so early leads can change. We only mark a race decided when the official results do.</p>
 

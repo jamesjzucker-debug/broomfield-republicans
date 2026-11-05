@@ -2,10 +2,13 @@
 // The JSON is built from the official Clarity feeds (CO SOS 127407, Broomfield 127416) by tools/election-night/build_results_json.py.
 (function () {
   var URL_JSON = 'assets/data/results.json';
+  var URL_TURNOUT = 'assets/data/turnout.json'; // Broomfield ballots cast + registered voters, kept separate from results.json
+  var turnout = null;
   var POLLS_CLOSE = Date.parse('2026-11-03T19:00:00-07:00');
   var board = document.getElementById('er-board');
   var headline = document.getElementById('er-headline');
   var updated = document.getElementById('er-updated');
+  var turnoutBox = document.getElementById('er-turnout');
   var scope = 'state';
   var last = null;
   var SECTIONS = ['Federal', 'Statewide', 'Colorado Legislature', 'Statewide Ballot Measures', 'Broomfield and Local Measures'];
@@ -52,7 +55,26 @@
     }
     return '<article class="er-card">' +
       '<header><h3>' + esc(c.label) + '</h3>' + scopeLabel(p) + '</header>' + rows +
-      '<footer>' + (counted ? fmt(d.total) + ' votes counted' : 'No votes reported yet') + '</footer></article>';
+      '<footer><span>' + (counted ? fmt(d.total) + ' votes counted' : 'No votes reported yet') + '</span>' + voterBase(c, p) + '</footer></article>';
+  }
+
+  // Registered voters in Broomfield who can vote in this contest (Broomfield view only).
+  function voterBase(c, p) {
+    var t = p.local && turnout && turnout.county && turnout.county.contests && turnout.county.contests[c.key];
+    if (!t || !t[1]) return '';
+    return '<span>' + fmt(t[0]) + ' of ' + fmt(t[1]) + ' registered voters returned a ballot (' + pct(100 * t[0] / t[1]) + ')</span>';
+  }
+
+  function renderTurnout() {
+    if (!turnoutBox) return;
+    var t = turnout && turnout.county;
+    if (!t || !t.registered_voters || !t.ballots_cast) { turnoutBox.hidden = true; return; }
+    var when = t.last_modified ? new Date(t.last_modified) : null;
+    var asof = when && !isNaN(when) ? ' As of the ' + when.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/Denver' }) + ' MT Broomfield count.' : '';
+    turnoutBox.innerHTML = '<span class="er-turnout__label">Broomfield turnout</span>' +
+      '<span class="er-turnout__big">' + pct(100 * t.ballots_cast / t.registered_voters) + '</span>' +
+      '<span class="er-turnout__text"><b>' + fmt(t.ballots_cast) + '</b> ballots counted out of <b>' + fmt(t.registered_voters) + '</b> registered voters.' + asof + '</span>';
+    turnoutBox.hidden = false;
   }
 
   function rank(x) { return x.party === 'REP' ? 0 : x.party === 'DEM' ? 1 : 2; }
@@ -85,6 +107,7 @@
   function scopeLabel(p) { return p.local ? '<span class="er-scope-tag">Broomfield votes</span>' : (scope === 'state' ? '' : ''); }
 
   function render() {
+    renderTurnout();
     if (!last) return;
     var html = '';
     SECTIONS.forEach(function (sec) {
@@ -113,6 +136,10 @@
       .catch(function () {
         if (!last) { headline.textContent = 'Live numbers are not loading right now. Use the official results links below.'; }
       });
+    fetch(URL_TURNOUT + '?t=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (j) { turnout = j; render(); renderTurnout(); })
+      .catch(function () {});
   }
 
   document.querySelectorAll('.er-scope button').forEach(function (b) {
