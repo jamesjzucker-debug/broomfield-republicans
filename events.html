@@ -97,15 +97,22 @@
 </section>
 
 <!-- Got an event idea? CTA -->
-<section class="section section--black" style="padding: 56px 0;">
-  <div class="container center" style="max-width: 720px; margin: 0 auto;">
-    <span class="eyebrow" style="color: var(--red-bright);">Help shape the calendar</span>
-    <h2 style="color: #fff;">Got an idea for an event?</h2>
-    <p style="color: #B5B5B5;">We have a lot of ideas for events (happy hours, BBQs in the park, candidate meet-and-greets, watch parties) and we need volunteers to help bring them to life. Got an idea, or want to help run one we've already cooked up? Tell the Chair.</p>
+<section class="section section--black" style="padding: 18px 0; border-top: 3px solid var(--red);">
+  <div class="container">
+    <style>
+      .idea-bar{display:flex;align-items:center;justify-content:center;gap:12px 24px;flex-wrap:wrap;}
+      .idea-bar__text{margin:0;color:#D8D8D8;font-size:1rem;}
+      .idea-bar__text strong{font-family:'Bebas Neue',Impact,sans-serif;font-size:1.5rem;letter-spacing:.02em;color:#fff;font-weight:400;margin-right:8px;}
+      details.idea > summary{list-style:none;display:inline-flex;}details.idea > summary::-webkit-details-marker{display:none;}
+      details.idea[open] > summary{display:none;}
+      details.idea[open]{flex-basis:100%;max-width:720px;}
+      @media (max-width:520px){.idea__row{grid-template-columns:1fr !important;}}
+    </style>
+    <div class="idea-bar">
+    <p class="idea-bar__text"><strong>Got an idea for an event?</strong> Happy hour, BBQ, meet-and-greet? Pitch it or help run one.</p>
     <!-- Event idea form: Formlite key "event-idea" in assets/js/formlite.js. Goes to the Chairman inbox and Discord. -->
-    <style>details.idea > summary{list-style:none;display:inline-flex;}details.idea > summary::-webkit-details-marker{display:none;}details.idea[open] > summary{display:none;}@media (max-width:520px){.idea__row{grid-template-columns:1fr !important;}}</style>
-    <details class="idea" style="margin-top: 22px;">
-      <summary class="btn btn--red btn--lg" style="cursor:pointer; justify-content:center;">Message the Chair &rarr;</summary>
+    <details class="idea">
+      <summary class="btn btn--red" style="cursor:pointer; justify-content:center;">Message the Chair &rarr;</summary>
       <form data-formlite="event-idea" action="https://forms.bcrserver.org/s/26fab2e9-eb7d-40a2-ad00-d33c130d976e" method="POST" style="margin-top: 8px; padding: 22px; background: #fff; border-radius: 10px; text-align: left;">
         <input type="hidden" name="form" value="Event Idea (events page)" />
         <div class="idea__row" style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px;">
@@ -136,6 +143,7 @@
         <p class="muted" style="font-size:.82rem; margin: 10px 0 0;">Goes straight to the Chair. We never share your information.</p>
       </form>
     </details>
+    </div>
   </div>
 </section>
 
