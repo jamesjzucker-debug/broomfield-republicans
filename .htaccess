@@ -11,6 +11,11 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # 0. Retired pages. /affordable (2026 mailer QR page) is pulled until further notice;
+  #    the page itself is archived at archive/2026-cycle/site-pages/ outside the repo.
+  #    302 so it can come back later without browsers caching the redirect.
+  RewriteRule ^affordable(\.html)?/?$ / [R=302,L,NC]
+
   # 1. /index.html -> /   (and /dir/index.html -> /dir/)
   RewriteCond %{THE_REQUEST} \s/+(.*?)index\.html[\s?] [NC]
   RewriteRule ^ /%1 [R=301,L]
