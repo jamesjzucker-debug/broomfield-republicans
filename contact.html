@@ -22,7 +22,7 @@
 
 <div class="topbar">
   <div class="container topbar__row">
-    <div>BROOMFIELD, COLORADO &nbsp;·&nbsp; <a href="mailto:Chairman@BroomfieldRepublicans.org">Chairman@BroomfieldRepublicans.org</a></div>
+    <div>BROOMFIELD, COLORADO &nbsp;·&nbsp; <a href="contact.html">Chairman@BroomfieldRepublicans.org</a></div>
     <div class="topbar__socials">
       <a href="https://www.facebook.com/BroomfieldGOP/" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
       <a href="https://twitter.com/broomfieldgop" aria-label="X" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2H21l-6.51 7.44L22 22h-6.828l-4.77-6.236L4.8 22H2.04l6.96-7.957L2 2h6.91l4.31 5.71L18.244 2zm-1.196 18h1.65L7.05 4H5.3l11.748 16z"/></svg></a>
@@ -101,10 +101,10 @@
     <div>
       <span class="eyebrow">Reach the Chairman</span>
       <h2>Direct line to leadership.</h2>
-      <p class="lead">Email is the fastest way to reach us. We aim to respond within 48 hours on weekdays.</p>
+      <p class="lead">The form on this page is the fastest way to reach us. It goes straight to the Chairman, and we aim to respond within 48 hours on weekdays.</p>
       <div class="card" style="margin-top: 24px; background: var(--bg-soft); border-color: var(--line);">
         <p style="margin: 0;"><strong style="color: var(--navy); font-size: 1.05rem;">Email</strong></p>
-        <p style="margin: 4px 0 14px;"><a href="mailto:Chairman@BroomfieldRepublicans.org" style="font-weight: 700;">Chairman@BroomfieldRepublicans.org</a></p>
+        <p style="margin: 4px 0 14px; font-weight: 700;">Chairman@BroomfieldRepublicans.org</p>
 
         <p style="margin: 0;"><strong style="color: var(--navy); font-size: 1.05rem;">Newsletter</strong></p>
         <p style="margin: 4px 0 14px;"><a href="https://ccobroomfield.formstack.com/forms/b_in_the_loop" target="_blank" rel="noopener">Subscribe to the weekly community update</a></p>
@@ -124,7 +124,7 @@
     </div>
     <div class="card" style="padding: 8px;">
       <!-- Contact form: Formlite key "contact" in assets/js/formlite.js. Goes to the Chairman inbox and Discord. -->
-      <form action="https://forms.bcrserver.org/s/d4abd999-946b-42be-bbba-dbc75b09185e" method="POST" style="padding: 20px;" data-formlite="contact">
+      <form id="contact-form" action="https://forms.bcrserver.org/s/d4abd999-946b-42be-bbba-dbc75b09185e" method="POST" style="padding: 20px;" data-formlite="contact">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 14px;">
           <label style="display:block; font-size:.82rem; font-weight:700; color:var(--navy);">First Name
             <input required name="first_name" style="margin-top:6px; width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:inherit;" />
@@ -144,6 +144,10 @@
             <option>Press / news tip</option>
             <option>Candidate inquiry</option>
             <option>Event suggestion</option>
+            <option>Discord invite request</option>
+            <option>Candidate news / announcement</option>
+            <option>Sponsorship / Liberty &amp; Laughs</option>
+            <option>Privacy request / unsubscribe</option>
             <option>Other</option>
           </select>
         </label>
@@ -184,6 +188,21 @@
 </footer>
 
 <script src="assets/script.js?v=20261103"></script>
-<script src="assets/js/formlite.js?v=20261022a" defer></script>
+<script>
+/* Prefill the Topic dropdown from links like contact.html?topic=tip (keeps visitors on the site
+   instead of opening their email app). Keys map to the option text above. */
+(function () {
+  var map = { general: "General question", volunteer: "Volunteer / get involved", donations: "Donations",
+    tip: "Press / news tip", candidate: "Candidate inquiry", event: "Event suggestion",
+    discord: "Discord invite request", "candidate-news": "Candidate news / announcement",
+    sponsorship: "Sponsorship / Liberty & Laughs", privacy: "Privacy request / unsubscribe" };
+  try {
+    var key = new URLSearchParams(location.search).get("topic");
+    var sel = document.querySelector('#contact-form select[name="topic"]');
+    if (key && map[key] && sel) sel.value = map[key];
+  } catch (e) {}
+})();
+</script>
+<script src="assets/js/formlite.js?v=20261104a" defer></script>
 </body>
 </html>

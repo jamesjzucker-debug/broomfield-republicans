@@ -67,10 +67,10 @@
   // page KEY  ->  Formlite form ID (paste each ID as its form is created)
   var FORMS = {
     "contact": "d4abd999-946b-42be-bbba-dbc75b09185e",
-    "get-involved": "",
-    "precinct-captains": "",
-    "run-for-office": "",
-    "school-board": "",
+    "get-involved": "6959931a-f95f-45ac-92e3-2b48b043bc48",
+    "precinct-captains": "67f6f83b-7402-45ac-8e11-864ea9711875",
+    "run-for-office": "f2581102-6c8f-445a-b6dc-246614930700",
+    "school-board": "fdef96f7-e35a-49cb-b3f2-1586a3e50f26",
     "young-republicans": "",
     "range-night": "66c47b22-4725-4b0a-9d42-3ddef687643b",
     "event-idea": "26fab2e9-eb7d-40a2-ad00-d33c130d976e",
